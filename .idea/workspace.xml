@@ -2,7 +2,159 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f3bfca3-6a62-46bf-a4a3-5a39cfeecc16" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/.idea/octoprint_Julia3GTouchUI.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/Main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/NewUI.ui" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/NewUI_backup.ui" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/config_Julia2018ProDual.yaml.backup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/hurry/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/hurry/filesize/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/hurry/filesize/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/hurry/filesize/filesize.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/hurry/filesize/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/keyBoard.py.bkp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/keyBoard.ui.bkp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/keyBoardFunc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/keyBoardFunc.py.bkp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/mainGUI.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/octoprintAPI.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/0441ea5619b979bde781aa040943c208.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/0Bars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/1Bars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/2Bars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/3Bars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/3d-printer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/4Bars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Advanced Bed Leveling.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Basic Bed Leveling.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/FeedRate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/FeedRate_Selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/File.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Motion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Motion_Selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Nozzle Offset Icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Nozzle Offset.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Nozzle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/NozzleActive.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/NozzleSelect.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/NozzleSelect_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/NozzleSelect_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/PrintBase.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Spool.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Spool_Selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Tool Offset Icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/Tool Z Offset Icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/WIFI-Icon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/activeNozzle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows-9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows-9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/list.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/stop-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/arrows/stop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/back-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/backspace-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/bed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/blank-check-box.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/caps-lock-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/caps_lock_pinned.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/cart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/changeFilament.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/changeFilament2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/check-box.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/check-mark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/chevron-pointing-to-the-left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/computer-fan-square-tool.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/download.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/earth-globe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/error.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/exclamation-mark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/fan-black-silhouette-off.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/fan-black-silhouette.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/filamentSensorOff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/filamentSensorOn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/folder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/fracktal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/heightCaliberation.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/home-icon-silhouette.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/house.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/information.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/list.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/load.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/loader1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/lockCenter.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/lockLeft.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/lockRight.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/magic-wand.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/motor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/network.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/next-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/pause-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/pie-chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/play-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/printer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/printer2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/reload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/remove.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/right-chevron.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/settings-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/settings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/snowflake.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/splash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/stop-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/stop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/thermometer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/thermometer_Selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/thumbnail.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/unload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/unlockAll.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/unlockLeft.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/update-arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/usb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/verification-mark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/video-player-stop-button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/wifi-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/wifi-signal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/templates/img/wifi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/win_keyboard.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/win_keyboard.ui" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <ignored path="Julia3GTouchUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,90 +177,9 @@
       <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="418">
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1694">
-              <caret line="109" column="2" selection-start-line="109" selection-start-column="2" selection-end-line="109" selection-end-column="2" />
-              <folding>
-                <element signature="e#19#285#1" expanded="false" />
-                <element signature="e#118279#119310#0" expanded="false" />
-                <element signature="e#118423#118572#0" expanded="false" />
-                <element signature="e#118653#119310#0" expanded="false" />
-                <element signature="e#120644#122045#0" expanded="false" />
-                <element signature="e#120711#120838#0" expanded="false" />
-                <element signature="e#120880#121445#0" expanded="false" />
-                <element signature="e#120895#121445#0" expanded="false" />
-                <element signature="e#121499#121974#0" expanded="false" />
-                <element signature="e#121514#121974#0" expanded="false" />
-                <element signature="e#122082#122086#0" expanded="false" />
-                <element signature="e#122124#122128#0" expanded="false" />
-                <element signature="e#122173#122177#0" expanded="false" />
-                <element signature="e#122225#123789#0" expanded="false" />
-                <element signature="e#122253#122322#0" expanded="false" />
-                <element signature="e#122351#123789#0" expanded="false" />
-                <element signature="e#122554#123707#0" expanded="false" />
-                <element signature="e#122627#123582#0" expanded="false" />
-                <element signature="e#122666#122774#0" expanded="false" />
-                <element signature="e#123173#123325#0" expanded="false" />
-                <element signature="e#123216#123325#0" expanded="false" />
-                <element signature="e#123619#123707#0" expanded="false" />
-                <element signature="e#123836#124408#0" expanded="false" />
-                <element signature="e#123882#123972#0" expanded="false" />
-                <element signature="e#124002#124408#0" expanded="false" />
-                <element signature="e#124462#125921#0" expanded="false" />
-                <element signature="e#124490#124537#0" expanded="false" />
-                <element signature="e#124566#124912#0" expanded="false" />
-                <element signature="e#124646#124830#0" expanded="false" />
-                <element signature="e#124679#124753#0" expanded="false" />
-                <element signature="e#124788#124830#0" expanded="false" />
-                <element signature="e#124951#125229#0" expanded="false" />
-                <element signature="e#124951#125071#1" expanded="false" />
-                <element signature="e#125260#125921#0" expanded="false" />
-                <element signature="e#125277#125881#0" expanded="false" />
-                <element signature="e#125955#126395#0" expanded="false" />
-                <element signature="e#125994#126063#0" expanded="false" />
-                <element signature="e#126165#126194#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config_Julia2018ProDual.yaml.backup.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/config_Julia2018ProDual.yaml.backup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="octoprintAPI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/octoprintAPI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13860">
-              <caret line="633" column="47" selection-start-line="633" selection-start-column="47" selection-end-line="633" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -146,15 +217,15 @@
         <option value="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/config_Julia2018ProDual.yaml.backup.py" />
         <option value="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/octoprintAPI.py" />
         <option value="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/Main.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/__init__.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2391" />
-    <option name="width" value="1218" />
-    <option name="height" value="1322" />
+    <option name="x" value="952" />
+    <option name="width" value="976" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -167,7 +238,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -180,10 +251,47 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Volterra400TouchUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Volterra400TouchUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Volterra400TouchUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Volterra400TouchUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Volterra400TouchUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="octoprint_Volterra400TouchUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Julia2018PrintRestore" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Vijay/Documents/GitHub/Julia3GTouchUI/octoprint_Julia3GTouchUI/mainGUI.py" />
   </component>
@@ -424,12 +532,12 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2391" y="0" width="1218" height="1322" extended-state="0" />
-    <editor active="true" />
+    <frame x="952" y="0" width="976" height="1050" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28496867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1505618" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15052888" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -445,25 +553,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1505618" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17370892" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19550562" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -593,83 +682,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/octoprintAPI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13860">
-          <caret line="633" column="47" selection-start-line="633" selection-start-column="47" selection-end-line="633" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1694">
-          <caret line="109" column="2" selection-start-line="109" selection-start-column="2" selection-end-line="109" selection-end-column="2" />
-          <folding>
-            <element signature="e#19#285#1" expanded="false" />
-            <element signature="e#118279#119310#0" expanded="false" />
-            <element signature="e#118423#118572#0" expanded="false" />
-            <element signature="e#118653#119310#0" expanded="false" />
-            <element signature="e#120644#122045#0" expanded="false" />
-            <element signature="e#120711#120838#0" expanded="false" />
-            <element signature="e#120880#121445#0" expanded="false" />
-            <element signature="e#120895#121445#0" expanded="false" />
-            <element signature="e#121499#121974#0" expanded="false" />
-            <element signature="e#121514#121974#0" expanded="false" />
-            <element signature="e#122082#122086#0" expanded="false" />
-            <element signature="e#122124#122128#0" expanded="false" />
-            <element signature="e#122173#122177#0" expanded="false" />
-            <element signature="e#122225#123789#0" expanded="false" />
-            <element signature="e#122253#122322#0" expanded="false" />
-            <element signature="e#122351#123789#0" expanded="false" />
-            <element signature="e#122554#123707#0" expanded="false" />
-            <element signature="e#122627#123582#0" expanded="false" />
-            <element signature="e#122666#122774#0" expanded="false" />
-            <element signature="e#123173#123325#0" expanded="false" />
-            <element signature="e#123216#123325#0" expanded="false" />
-            <element signature="e#123619#123707#0" expanded="false" />
-            <element signature="e#123836#124408#0" expanded="false" />
-            <element signature="e#123882#123972#0" expanded="false" />
-            <element signature="e#124002#124408#0" expanded="false" />
-            <element signature="e#124462#125921#0" expanded="false" />
-            <element signature="e#124490#124537#0" expanded="false" />
-            <element signature="e#124566#124912#0" expanded="false" />
-            <element signature="e#124646#124830#0" expanded="false" />
-            <element signature="e#124679#124753#0" expanded="false" />
-            <element signature="e#124788#124830#0" expanded="false" />
-            <element signature="e#124951#125229#0" expanded="false" />
-            <element signature="e#124951#125071#1" expanded="false" />
-            <element signature="e#125260#125921#0" expanded="false" />
-            <element signature="e#125277#125881#0" expanded="false" />
-            <element signature="e#125955#126395#0" expanded="false" />
-            <element signature="e#125994#126063#0" expanded="false" />
-            <element signature="e#126165#126194#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/config_Julia2018ProDual.yaml.backup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/octoprintAPI.py" />
+    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/Main.py" />
+    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/config_Julia2018ProDual.yaml.backup.py" />
+    <entry file="file://$PROJECT_DIR$/octoprint_Julia2018ProDualTouchUI/__init__.py" />
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>

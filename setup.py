@@ -4,21 +4,21 @@
 ### Do not forget to adjust the following variables to your own plugin.
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "Julia2018ProDualTouchUI"
+plugin_identifier = "Volterra400TouchUI"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "octoprint_Julia2018ProDualTouchUI"
+plugin_package = "octoprint_Volterra400TouchUI"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
 plugin_name = "Octoprint-Julia2018ProDualTouchUI"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.0.15"
+plugin_version = "0.0.1"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
-plugin_description = """TouchScreen Plugin for Julia 2018 Pro Dual"""
+plugin_description = """TouchScreen Plugin for VOltera 400 Dual"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
 plugin_author = "Vijay Raghav Varada"
