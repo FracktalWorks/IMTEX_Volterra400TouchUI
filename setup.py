@@ -11,14 +11,14 @@ plugin_package = "octoprint_Volterra400TouchUI"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
-plugin_name = "Octoprint-Julia2018ProDualTouchUI"
+plugin_name = "Octoprint-Volterra400TouchUI"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
 plugin_version = "0.0.1"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
-plugin_description = """TouchScreen Plugin for VOltera 400 Dual"""
+plugin_description = """TouchScreen Plugin for Volterra400"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
 plugin_author = "Vijay Raghav Varada"
@@ -27,7 +27,7 @@ plugin_author = "Vijay Raghav Varada"
 plugin_author_email = "vjvarada@fracktal.in"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/FracktalWorks/JuliaProDualTouchUI"
+plugin_url = "https://github.com/FracktalWorks/Volterra400TouchUI"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
