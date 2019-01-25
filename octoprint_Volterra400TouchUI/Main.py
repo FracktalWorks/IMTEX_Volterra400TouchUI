@@ -22,7 +22,7 @@ import sys
 import subprocess
 from octoprintAPI import octoprintAPI
 from hurry.filesize import size
-from datetime import datetimef
+from datetime import datetime
 # from functools import partial
 import qrcode
 # pip install websocket-client
@@ -133,12 +133,18 @@ def getIP(interface):
         scan_result = \
             subprocess.Popen("ifconfig | grep " + interface + " -A 1", stdout=subprocess.PIPE, shell=True).communicate()[0]
         # Processing STDOUT into a dictionary that later will be converted to a json file later
-        scan_result = scan_result.split(
-            '\n')  # each ssid and pass from an item in a list ([ssid pass,ssid paas])
-        scan_result = [s.strip() for s in scan_result]
-        # scan_result = [s.strip('"') for s in scan_result]
-        scan_result = filter(None, scan_result)
-        return scan_result[1][scan_result[1].index('inet addr:') + 10: 23]
+        # scan_result = scan_result.split(
+        #     '\n')  # each ssid and pass from an item in a list ([ssid pass,ssid paas])
+        # scan_result = [s.strip() for s in scan_result]
+        # # scan_result = [s.strip('"') for s in scan_result]
+        # scan_result = filter(None, scan_result)
+        # ip = scan_result[1][scan_result[1].index('inet ') + 5: 23]
+        match = re.search(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})", scan_result)
+        # print(scan_result)
+        print(match)
+        if match:
+            return match.group(1)
+        return None
     except:
         return None
 
@@ -346,7 +352,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.connect(self.QtSocket, QtCore.SIGNAL('FILAMENT_SENSOR_TRIGGERED'), self.filamentSensorHandler)
         self.connect(self.QtSocket, QtCore.SIGNAL('FIRMWARE_UPDATER'), self.firmwareUpdateHandler)
         self.connect(self.QtSocket, QtCore.SIGNAL('Z_PROBING_FAILED'), self.showProbingFailed)
-	self.connect(self.QtSocket, QtCore.SIGNAL('TOOL_OFFSET'), self.getToolOffset)
+        self.connect(self.QtSocket, QtCore.SIGNAL('TOOL_OFFSET'), self.getToolOffset)
         self.connect(self.QtSocket, QtCore.SIGNAL('ACTIVE_EXTRUDER'), self.setActiveExtruder)
 
         # Text Input events
@@ -818,12 +824,16 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         wlan0_config_file.truncate()
         ascii_ssid = self.wifiSettingsComboBox.currentText()
         # unicode_ssid = ascii_ssid.decode('string_escape').decode('utf-8')
+        wlan0_config_file.write(u"country=IN\n")
+        wlan0_config_file.write(u"ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n")
+        wlan0_config_file.write(u"update_config=1\n")
+        wlan0_config_file.write(u"\n")
         wlan0_config_file.write(u"network={\n")
-        wlan0_config_file.write(u'ssid="' + str(ascii_ssid) + '"\n')
+        wlan0_config_file.write(u'  ssid="' + str(ascii_ssid) + '"\n')
         if self.hiddenCheckBox.isChecked():
-            wlan0_config_file.write(u'scan_ssid=1\n')
+            wlan0_config_file.write(u'  scan_ssid=1\n')
         if str(self.wifiPasswordLineEdit.text()) != "":
-            wlan0_config_file.write(u'psk="' + str(self.wifiPasswordLineEdit.text()) + '"\n')
+            wlan0_config_file.write(u'  psk="' + str(self.wifiPasswordLineEdit.text()) + '"\n')
         wlan0_config_file.write(u'}')
         wlan0_config_file.close()
         signal = 'WIFI_RECONNECT_RESULT'
@@ -1748,12 +1758,17 @@ class QtWebsocket(QtCore.QThread):
             random.randrange(0, stop=999),  # server_id
             uuid.uuid4()  # session_id
         )
+        # websocket.enableTrace(True)
         self.ws = websocket.WebSocketApp(url,
                                          on_message=self.on_message,
                                          on_error=self.on_error,
                                          on_close=self.on_close)
+        # print("WS connected: " + str(self.ws.connected))
+        self.ws.on_open = self.on_open
+        self.ws.on_close = self.on_close
 
     def run(self):
+        print("ws run")
         self.ws.run_forever()
 
     def on_message(self, ws, message):
@@ -1855,12 +1870,15 @@ class QtWebsocket(QtCore.QThread):
                     pass
 
     def on_open(self, ws):
+        print('Websocket opened')
         pass
 
     def on_close(self, ws):
+        print('Websocket closed')
         pass
 
     def on_error(self, ws, error):
+        print(error)
         pass
 
 
