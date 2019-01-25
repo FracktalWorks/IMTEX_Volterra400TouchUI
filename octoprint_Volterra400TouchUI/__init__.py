@@ -57,7 +57,7 @@ class Volterra400TouchUI(octoprint.plugin.StartupPlugin):
 
 
 __plugin_name__ = "Volterra400 Touch UI"
-__plugin_version__ = "0.0.1"
+__plugin_version__ = "0.0.3"
 
 
 def __plugin_load__():
