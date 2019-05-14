@@ -102,7 +102,8 @@ filaments = {"ABS": 220,
 
 calibrationPosition = {'X1': 340, 'Y1': 42,
                        'X2': 30, 'Y2': 42,
-                       'X3': 185, 'Y3': 352
+                       'X3': 185, 'Y3': 352,
+                       'X4': 185, 'Y4': 42
                        }
 
 try:
@@ -340,7 +341,10 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         '''
         defines all the Slots and Button events.
         '''
-        self.connect(self.QtSocket, QtCore.SIGNAL('Z_PROBE_OFFSET'), self.updateEEPROMProbeOffset)
+        #--Dual Caliberation Addition--
+        self.connect(self.QtSocket, QtCore.SIGNAL('SET_Z_TOOL_OFFSET'), self.setZToolOffset)
+
+        self.connect(self.QtSocket, QtCore.SIGNAL('Z_PROBE_OFFSET'), self.updateEEPROMProbeOffset) #sets the current position of the probe offset to eeprom
         self.connect(self.QtSocket, QtCore.SIGNAL('TEMPERATURES'), self.updateTemperature)
         self.connect(self.QtSocket, QtCore.SIGNAL('STATUS'), self.updateStatus)
         self.connect(self.QtSocket, QtCore.SIGNAL('PRINT_STATUS'), self.updatePrintStatus)
@@ -386,13 +390,16 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.nozzleOffsetSetButton.pressed.connect(
             lambda: self.setZProbeOffset(self.nozzleOffsetDoubleSpinBox.value()))
         self.nozzleOffsetBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
+        # --Dual Caliberation Addition--
+        self.moveZMT1CaliberateButton.pressed.connect(lambda: octopiclient.jog(z=-0.025))
+        self.moveZPT1CaliberateButton.pressed.connect(lambda: octopiclient.jog(z=0.025))
 
         self.calibrationWizardButton.clicked.connect(self.quickStep1)
         self.quickStep1NextButton.clicked.connect(self.quickStep2)
         self.quickStep2NextButton.clicked.connect(self.quickStep3)
         self.quickStep3NextButton.clicked.connect(self.quickStep4)
-        self.quickStep4NextButton.clicked.connect(self.doneStep)
-        self.nozzleHeightStep1NextButton.clicked.connect(self.doneStep)
+        self.quickStep4NextButton.clicked.connect(self.nozzleHeightStep1)
+        self.nozzleHeightStep1NextButton.clicked.connect(self.nozzleHeightStep1)
         self.quickStep1CancelButton.pressed.connect(self.cancelStep)
         self.quickStep2CancelButton.pressed.connect(self.cancelStep)
         self.quickStep3CancelButton.pressed.connect(self.cancelStep)
@@ -1554,6 +1561,25 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
 
     ''' +++++++++++++++++++++++++++++++++++Calibration++++++++++++++++++++++++++++++++ '''
 
+    def setZToolOffset(self, offset, setOffset=False):
+        '''
+        Sets the home offset after the caliberation wizard is done, which is a callback to
+        the response of M114 that is sent at the end of the Wizard in doneStep()
+        :param offset: the value off the offset to set. is a str is coming from M114, and is float if coming from the nozzleOffsetPage
+        :param setOffset: Boolean, is true if the function call is from the nozzleOFfsetPage
+        :return:
+
+        #TODO can make this simpler, asset the offset value to string float to begin with instead of doing confitionals
+        '''
+        self.currentZPosition = offset #gets the current z position, used to set new tool offsets. clean this shit up.
+        #fuck you past vijay for not cleaning this up
+        if self.setNewToolZOffsetFromCurrentZBool:
+            newToolOffsetZ = float(self.toolOffsetZ) - float(self.currentZPosition)
+            octopiclient.gcode(command='M218 T1 Z{}'.format(newToolOffsetZ))  # restore eeprom settings to get Z home offset, mesh bed leveling back
+            self.setNewToolZOffsetFromCurrentZBool =False
+            octopiclient.gcode(command='M500')  # store eeprom settings to get Z home offset, mesh bed leveling back
+
+
     def showProbingFailed(self):
         self.tellAndReboot("Bed position is not calibrated. Please run calibration wizard after restart.")
 
@@ -1578,7 +1604,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
 
     def requestEEPROMProbeOffset(self):
         '''
-        Updates the value of M206 Z in the nozzle offset spinbox. Sends M503 so that the pritner returns the value as a websocket calback
+        Updates the value of probe offset in the nozzle offset spinbox. Sends M503 so that the pritner returns the value as a websocket calback
         :return:
         '''
         octopiclient.gcode(command='M503')
@@ -1629,7 +1655,12 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         goes to position where leveling screws can be opened
         :return:
         '''
+        self.toolZOffsetCaliberationPageCount = 0
         octopiclient.gcode(command='M104 S200')
+        octopiclient.gcode(command='M104 T1 S200')
+        octopiclient.gcode(command='M211 S0')  # Disable software endstop
+        octopiclient.gcode(command='T0')  # Set active tool to t0
+        octopiclient.gcode(command='M503')  # makes sure internal value of Z offset and Tool offsets are stored before erasing
         octopiclient.gcode(command='M420 S0')  # Dissable mesh bed leveling for good measure
         self.stackedWidget.setCurrentWidget(self.quickStep1Page)
         octopiclient.home(['x', 'y', 'z'])
@@ -1665,18 +1696,37 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         octopiclient.jog(z=0, absolute=True, speed=1500)
 
     def nozzleHeightStep1(self):
-        self.stackedWidget.setCurrentWidget(self.nozzleHeightStep1Page)
-        octopiclient.jog(z=1, absolute=True, speed=1500)
-        octopiclient.gcode(command='T1')
+        if self.toolZOffsetCaliberationPageCount == 0 :
+            self.toolZOffsetLabel.setText("Move the bed up or down to the First Nozzle , testing height using paper")
+            self.stackedWidget.setCurrentWidget(self.nozzleHeightStep1Page)
+            octopiclient.jog(z=10, absolute=True, speed=1500)
+            octopiclient.jog(x=calibrationPosition['X4'], y=calibrationPosition['Y4'], absolute=True, speed=2000)
+            octopiclient.jog(z=1, absolute=True, speed=1500)
+            self.toolZOffsetCaliberationPageCount = 1
+        elif self.toolZOffsetCaliberationPageCount == 1:
+            self.toolZOffsetLabel.setText("Move the bed up or down to the Second Nozzle , testing height using paper")
+            octopiclient.gcode(command='G92 Z0')#set the current Z position to zero
+            octopiclient.jog(z=1, absolute=True, speed=1500)
+            octopiclient.gcode(command='T1')
+            self.toolZOffsetCaliberationPageCount = 2
+        else:
+            self.doneStep()
 
     def doneStep(self):
         '''
         Exits leveling
         :return:
         '''
+        self.setNewToolZOffsetFromCurrentZBool = True
+        octopiclient.gcode(command='M114')
+        octopiclient.jog(z=4, absolute=True, speed=1500)
+        octopiclient.gcode(command='T0')
+        octopiclient.gcode(command='M211 S1')  # Disable software endstop
         self.stackedWidget.setCurrentWidget(self.calibratePage)
         octopiclient.home(['x', 'y', 'z'])
         octopiclient.gcode(command='M104 S0')
+        octopiclient.gcode(command='M500')  # store eeprom settings to get Z home offset, mesh bed leveling back
+
 
     def cancelStep(self):
         self.stackedWidget.setCurrentWidget(self.calibratePage)
@@ -1824,7 +1874,7 @@ class QtWebsocket(QtCore.QThread):
                     if 'M206' in item:
                         self.emit(QtCore.SIGNAL('Z_HOME_OFFSET'), item[item.index('Z') + 1:].split(' ', 1)[0])
                     if 'Count' in item:  # can get thris throught the positionUpdate event
-                        self.emit(QtCore.SIGNAL('SET_Z_HOME_OFFSET'), item[item.index('Z') + 2:].split(' ', 1)[0],
+                        self.emit(QtCore.SIGNAL('SET_Z_TOOL_OFFSET'), item[item.index('Z') + 2:].split(' ', 1)[0],
                                   False)
                     if 'M218' in item:
                         self.emit(QtCore.SIGNAL('TOOL_OFFSET'), item[item.index('M218'):])
@@ -1901,12 +1951,12 @@ class ThreadSanityCheck(QtCore.QThread):
                     self.emit(QtCore.SIGNAL('STARTUP_ERROR'))
                     break
                 octopiclient = octoprintAPI(ip, apiKey)
-                result = subprocess.Popen("dmesg | grep 'ttyUSB'", stdout=subprocess.PIPE, shell=True).communicate()[0]
+                result = subprocess.Popen("dmesg | grep 'ttyACM'", stdout=subprocess.PIPE, shell=True).communicate()[0]
                 result = result.split('\n')  # each ssid and pass from an item in a list ([ssid pass,ssid paas])
                 result = [s.strip() for s in result]
                 for line in result:
-                    if 'FTDI' in line:
-                        self.MKSPort = line[line.index('ttyUSB'):line.index('ttyUSB') + 7]
+                    if 'cdc_acm' in line:
+                        self.MKSPort = line[line.index('ttyACM'):line.index('ttyACM') + 7]
                         print self.MKSPort
 
                 if not self.MKSPort:
