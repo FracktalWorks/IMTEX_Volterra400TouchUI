@@ -268,6 +268,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(15)
 
+
         self.wifiPasswordLineEdit = ClickableLineEdit(self.wifiSettingsPage)
         self.wifiPasswordLineEdit.setGeometry(QtCore.QRect(0, 170, 480, 60))
         self.wifiPasswordLineEdit.setFont(font)
@@ -343,7 +344,6 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         '''
         #--Dual Caliberation Addition--
         self.connect(self.QtSocket, QtCore.SIGNAL('SET_Z_TOOL_OFFSET'), self.setZToolOffset)
-
         self.connect(self.QtSocket, QtCore.SIGNAL('Z_PROBE_OFFSET'), self.updateEEPROMProbeOffset) #sets the current position of the probe offset to eeprom
         self.connect(self.QtSocket, QtCore.SIGNAL('TEMPERATURES'), self.updateTemperature)
         self.connect(self.QtSocket, QtCore.SIGNAL('STATUS'), self.updateStatus)

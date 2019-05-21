@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'win_keyboard.ui'
+# Form implementation generated from reading ui file '.\win_keyboard.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -25,9 +25,13 @@ except AttributeError:
 class Ui_WinKeyboard(object):
     def setupUi(self, WinKeyboard):
         WinKeyboard.setObjectName(_fromUtf8("WinKeyboard"))
-        WinKeyboard.resize(480, 320)
+        WinKeyboard.resize(480, 800)
+        WinKeyboard.setMinimumSize(QtCore.QSize(480, 800))
+        WinKeyboard.setMaximumSize(QtCore.QSize(480, 800))
+        WinKeyboard.setStyleSheet(_fromUtf8("\n"
+"background-color: rgb(40, 40, 40);"))
         self.tbDisplay = QtGui.QTextEdit(WinKeyboard)
-        self.tbDisplay.setGeometry(QtCore.QRect(0, 0, 288, 81))
+        self.tbDisplay.setGeometry(QtCore.QRect(-1, 0, 482, 566))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(14)
@@ -36,7 +40,7 @@ class Ui_WinKeyboard(object):
 "color: rgb(255, 255, 255);"))
         self.tbDisplay.setObjectName(_fromUtf8("tbDisplay"))
         self.pageHolder = QtGui.QStackedWidget(WinKeyboard)
-        self.pageHolder.setGeometry(QtCore.QRect(0, 80, 480, 250))
+        self.pageHolder.setGeometry(QtCore.QRect(1, 563, 480, 250))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
         font.setPointSize(14)
@@ -4478,7 +4482,7 @@ class Ui_WinKeyboard(object):
         self.btSubmitSpecial.raise_()
         self.pageHolder.addWidget(self.pgSpecial)
         self.btCursorLeft = QtGui.QPushButton(WinKeyboard)
-        self.btCursorLeft.setGeometry(QtCore.QRect(288, 0, 96, 81))
+        self.btCursorLeft.setGeometry(QtCore.QRect(0, 483, 241, 81))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
         font.setPointSize(14)
@@ -4517,7 +4521,7 @@ class Ui_WinKeyboard(object):
         self.btCursorLeft.setIconSize(QtCore.QSize(45, 45))
         self.btCursorLeft.setObjectName(_fromUtf8("btCursorLeft"))
         self.btCursorRight = QtGui.QPushButton(WinKeyboard)
-        self.btCursorRight.setGeometry(QtCore.QRect(384, 0, 96, 81))
+        self.btCursorRight.setGeometry(QtCore.QRect(241, 483, 240, 81))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
         font.setPointSize(14)
@@ -4556,7 +4560,7 @@ class Ui_WinKeyboard(object):
         self.btCursorRight.setObjectName(_fromUtf8("btCursorRight"))
 
         self.retranslateUi(WinKeyboard)
-        self.pageHolder.setCurrentIndex(3)
+        self.pageHolder.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(WinKeyboard)
 
     def retranslateUi(self, WinKeyboard):
