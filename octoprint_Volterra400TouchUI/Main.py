@@ -1312,6 +1312,31 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.bedActualTemperatute.setText(str(int(temperature['bedActual'])))  # + unichr(176))
         self.bedTargetTemperature.setText(str(int(temperature['bedTarget'])))  # + unichr(176))
 
+        if temperature['chamberTarget'] == 0:
+            self.chamberTempBar.setMaximum(90)
+            self.chamberTempBar.setStyleSheet(styles.bar_heater_cold)
+        elif temperature['chamberActual'] <= temperature['chamberTarget']:
+            self.chamberTempBar.setMaximum(temperature['chamberTarget'])
+            self.chamberTempBar.setStyleSheet(styles.bar_heater_heating)
+        else:
+            self.chamberTempBar.setMaximum(temperature['chamberActual'])
+        self.chamberTempBar.setValue(temperature['chamberActual'])
+        self.chamberActualTemperatute.setText(str(int(temperature['chamberActual'])))  # + unichr(176))
+        self.chamberTargetTemperature.setText(str(int(temperature['chamberActual'])))  # + unichr(176))
+
+        if temperature['filboxActual'] > 45:
+            self.filboxTempBar.setMaximum(80)
+            self.filboxTempBar.setStyleSheet(styles.bar_heater_heating)
+        else:
+            self.filboxTempBar.setMaximum(80)
+            self.filboxTempBar.setStyleSheet(styles.bar_heater_cold)
+        self.filboxActualTemperatute.setText(str(int(temperature['filboxActual'])))  # + unichr(176))
+        self.filboxTargetTemperature.setText(str(80))  # + unichr(176))
+
+
+
+
+
         # updates the progress bar on the change filament screen
         if self.changeFilamentHeatingFlag:
             if self.activeExtruder == 0:
@@ -1908,7 +1933,11 @@ class QtWebsocket(QtCore.QThread):
                                     'tool1Actual': temp(data, "tool1", "actual"),
                                     'tool1Target': temp(data, "tool1", "target"),
                                     'bedActual': temp(data, "bed", "actual"),
-                                    'bedTarget': temp(data, "bed", "target")}
+                                    'bedTarget': temp(data, "bed", "target"),
+                                    'chamberActual':temp(data, "chamber", "actual"),
+                                    'chamberTarget': temp(data, "chamber", "target"),
+                                    'filboxActual': temp(data, "filbox", "actual"),
+                                    'filboxTarget': temp(data, "filbox", "target")}
                     self.emit(QtCore.SIGNAL('TEMPERATURES'), temperatures)
                 except KeyError:
                     # temperatures = {'tool0Actual': 0,

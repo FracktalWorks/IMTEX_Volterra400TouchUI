@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>15</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -1468,7 +1468,7 @@ background-color: rgba(255, 255, 255, 0);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QProgressBar" name="spoolTempBar">
+     <widget class="QProgressBar" name="filboxTempBar">
       <property name="geometry">
        <rect>
         <x>439</x>
@@ -1542,7 +1542,7 @@ background-color: rgba(255, 255, 255, 0);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="spoolActualTemperatute">
+     <widget class="QLabel" name="filboxActualTemperatute">
       <property name="geometry">
        <rect>
         <x>399</x>
@@ -1573,7 +1573,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="spoolTargetTemperature">
+     <widget class="QLabel" name="filboxTargetTemperature">
       <property name="geometry">
        <rect>
         <x>396</x>
@@ -1729,10 +1729,10 @@ background-color: rgba(255, 255, 255, 0);</string>
      <zorder>chamberActualTemperatute</zorder>
      <zorder>celciusLabel_4</zorder>
      <zorder>chamberTargetTemperature</zorder>
-     <zorder>spoolTempBar</zorder>
+     <zorder>filboxTempBar</zorder>
      <zorder>spoolHeatLabel</zorder>
-     <zorder>spoolActualTemperatute</zorder>
-     <zorder>spoolTargetTemperature</zorder>
+     <zorder>filboxActualTemperatute</zorder>
+     <zorder>filboxTargetTemperature</zorder>
      <zorder>celciusLabel_5</zorder>
      <zorder>tool0TargetTemperature_2</zorder>
      <zorder>tool0TargetTemperature_3</zorder>
@@ -5968,7 +5968,7 @@ QPushButton:focus {
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Ensure PLA material is loaded into both nozzles before continuing </string>
+       <string>Ensure PLA material of different colors are loaded into both nozzles before continuing </string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -6414,7 +6414,7 @@ QPushButton:focus {
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Ensure PLA material is loaded into both nozzles before continuing </string>
+       <string>Ensure PLA material of different colors are loaded into both nozzles before continuing </string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
