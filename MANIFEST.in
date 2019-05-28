@@ -1,3 +1,4 @@
 include README.md
-recursive-include octoprint_Julia2018ProDualABLTouchUI/templates *
-recursive-include octoprint_Julia2018ProDualABLTouchUI/config *
+recursive-include octoprint_Volterra400TouchUI/templates *
+recursive-include octoprint_Volterra400TouchUI/config *
+recursive-include octoprint_Volterra400TouchUI/gcode *

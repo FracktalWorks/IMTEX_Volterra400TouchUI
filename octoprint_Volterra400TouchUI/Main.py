@@ -386,12 +386,11 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         # Calibrate Page
         self.calibrateBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.MenuPage))
         self.nozzleOffsetButton.pressed.connect(self.requestEEPROMProbeOffset)
-        # the -ve sign is such that its converted to home offset and not just distance between nozzle and bed
         self.nozzleOffsetSetButton.pressed.connect(
             lambda: self.setZProbeOffset(self.nozzleOffsetDoubleSpinBox.value()))
         self.nozzleOffsetBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
-        # --Dual Caliberation Addition--
-        self.moveZMT1CaliberateButton.pressed.connect(lambda: octopiclient.jog(z=-0.025))
+
+        self.moveZMT1CaliberateButton.pressed.connect(lambda: octopiclient.jog(z=-0.025)) # --Dual Caliberation Addition--
         self.moveZPT1CaliberateButton.pressed.connect(lambda: octopiclient.jog(z=0.025))
 
         self.calibrationWizardButton.clicked.connect(self.quickStep1)
@@ -413,6 +412,21 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.toolOffsetZBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
         self.toolOffsetXYButton.pressed.connect(self.toolOffsetXY)
         self.toolOffsetZButton.pressed.connect(self.toolOffsetZ)
+
+        self.testPrintsButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.testPrintsPage1))
+        self.testPrintsNextButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.testPrintsPage2))
+        self.testPrintsBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
+        self.testPrintsCancelButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
+        self.dualCaliberationPrintButton.pressed.connect(
+            lambda: self.testPrint(self.testPrintsTool0SizeComboBox,self.testPrintsTool1SizeComboBox,'dualCalibration'))
+        self.bedLevelPrintButton.pressed.connect(
+            lambda: self.testPrint(self.testPrintsTool0SizeComboBox,self.testPrintsTool1SizeComboBox,'bedLevel'))
+        self.movementTestPrintButton.pressed.connect(
+            lambda: self.testPrint(self.testPrintsTool0SizeComboBox, self.testPrintsTool1SizeComboBox, 'movementTest'))
+        self.singleNozzlePrintButton.pressed.connect(
+            lambda: self.testPrint(self.testPrintsTool0SizeComboBox, self.testPrintsTool1SizeComboBox, 'dualTest'))
+        self.dualNozzlePrintButton.pressed.connect(
+            lambda: self.testPrint(self.testPrintsTool0SizeComboBox, self.testPrintsTool1SizeComboBox, 'singleTest'))
 
         # PrintLocationScreen
         self.printLocationScreenBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.MenuPage))
@@ -1331,7 +1345,6 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.filboxTempBar.setMaximum(80)
             self.filboxTempBar.setStyleSheet(styles.bar_heater_cold)
         self.filboxActualTemperatute.setText(str(int(temperature['filboxActual'])))  # + unichr(176))
-        self.filboxTargetTemperature.setText(str(80))  # + unichr(176))
 
 
 
@@ -1604,7 +1617,6 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.setNewToolZOffsetFromCurrentZBool =False
             octopiclient.gcode(command='M500')  # store eeprom settings to get Z home offset, mesh bed leveling back
 
-
     def showProbingFailed(self):
         self.tellAndReboot("Bed position is not calibrated. Please run calibration wizard after restart.")
 
@@ -1752,11 +1764,51 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         octopiclient.gcode(command='M104 S0')
         octopiclient.gcode(command='M500')  # store eeprom settings to get Z home offset, mesh bed leveling back
 
-
     def cancelStep(self):
         self.stackedWidget.setCurrentWidget(self.calibratePage)
         octopiclient.home(['x', 'y', 'z'])
         octopiclient.gcode(command='M104 S0')
+
+    def testPrint(self,tool0Diameter,tool1Diameter,gcode):
+        '''
+        Prints a test print
+        :param tool0Diameter: Diameter of tool 0 nozzle.04,06 or 08
+        :param tool1Diameter: Diameter of tool 1 nozzle.40,06 or 08
+        :param gcode: type of gcode to print, dual nozzle calibration, bed leveling, movement or samaple prints in
+        single and dual. bedLevel, dualCalibration, movementTest, dualTest, singleTest
+        :return:
+        '''
+        if gcode is 'bedLevel':
+            self.printFromPath('gcode/' + str(tool0Diameter) + '_BedLeveling.gcode', True)
+        elif gcode is 'dualCalibration':
+            self.printFromPath(
+                'gcode/' + str(tool0Diameter) + '_' + str(tool1Diameter) + '_dual_extruder_calibration_Volterra.gcode',
+                True)
+        elif gcode is 'movementTest':
+            self.printFromPath('gcode/movementTest', True)
+        elif gcode is 'dualTest':
+            self.printFromPath(
+                'gcode/' + str(tool0Diameter) + '_' + str(tool1Diameter) + '_Fracktal_logo_Volterra.gcode',
+                True)
+        elif gcode is 'singleTest':
+            self.printFromPath('gcode/' + str(tool0Diameter) + '_Fracktal_logo_Volterra.gcode',True)
+
+        else:
+            print 'gcode not found'
+
+            #check nozzle nize and print
+    def printFromPath(self,path,prnt=True):
+        '''
+        Transfers a file from a specific to octoprint's watched folder so that it gets automatically detected by Octoprint.
+        Warning: If the file is read-only, octoprint API for reading the file crashes.
+        '''
+
+
+        self.uploadThread = ThreadFileUpload(path, prnt=prnt)
+        self.uploadThread.start()
+        if prnt:
+            self.stackedWidget.setCurrentWidget(self.homePage)
+
 
     ''' +++++++++++++++++++++++++++++++++++Keyboard++++++++++++++++++++++++++++++++ '''
 

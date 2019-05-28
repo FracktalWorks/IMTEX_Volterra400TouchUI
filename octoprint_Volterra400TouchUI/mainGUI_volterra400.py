@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
         self.mainApplication.setObjectName(_fromUtf8("mainApplication"))
         self.stackedWidget = QtGui.QStackedWidget(self.mainApplication)
         self.stackedWidget.setEnabled(True)
-        self.stackedWidget.setGeometry(QtCore.QRect(-6, 0, 480, 800))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 480, 800))
         self.stackedWidget.setMinimumSize(QtCore.QSize(480, 800))
         self.stackedWidget.setMaximumSize(QtCore.QSize(480, 800))
         palette = QtGui.QPalette()
@@ -3049,9 +3049,9 @@ class Ui_MainWindow(object):
         self.testPrintsButton.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.testPrintsButton.setObjectName(_fromUtf8("testPrintsButton"))
         self.stackedWidget.addWidget(self.calibratePage)
-        self.page = QtGui.QWidget()
-        self.page.setObjectName(_fromUtf8("page"))
-        self.calibrateLabel_2 = QtGui.QLabel(self.page)
+        self.testPrintsPage1 = QtGui.QWidget()
+        self.testPrintsPage1.setObjectName(_fromUtf8("testPrintsPage1"))
+        self.calibrateLabel_2 = QtGui.QLabel(self.testPrintsPage1)
         self.calibrateLabel_2.setGeometry(QtCore.QRect(10, 19, 469, 31))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
@@ -3061,13 +3061,13 @@ class Ui_MainWindow(object):
         self.calibrateLabel_2.setFont(font)
         self.calibrateLabel_2.setStyleSheet(_fromUtf8("color: rgb(255, 255, 255);"))
         self.calibrateLabel_2.setObjectName(_fromUtf8("calibrateLabel_2"))
-        self.tool0SizeComboBox = QtGui.QComboBox(self.page)
-        self.tool0SizeComboBox.setGeometry(QtCore.QRect(100, 287, 370, 51))
+        self.testPrintsTool0SizeComboBox = QtGui.QComboBox(self.testPrintsPage1)
+        self.testPrintsTool0SizeComboBox.setGeometry(QtCore.QRect(100, 287, 370, 51))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(20)
-        self.tool0SizeComboBox.setFont(font)
-        self.tool0SizeComboBox.setStyleSheet(_fromUtf8(" QScrollBar:vertical {\n"
+        self.testPrintsTool0SizeComboBox.setFont(font)
+        self.testPrintsTool0SizeComboBox.setStyleSheet(_fromUtf8(" QScrollBar:vertical {\n"
 "     border: 1px solid black;\n"
 "border-radius: 5px;\n"
 "    background-color: rgb(40,40,40);\n"
@@ -3166,19 +3166,20 @@ class Ui_MainWindow(object):
 "    selection-background-color: rgb(40, 40, 40);\n"
 "    background: white;\n"
 "}"))
-        self.tool0SizeComboBox.setEditable(False)
-        self.tool0SizeComboBox.setMaxVisibleItems(8)
-        self.tool0SizeComboBox.setIconSize(QtCore.QSize(30, 30))
-        self.tool0SizeComboBox.setObjectName(_fromUtf8("tool0SizeComboBox"))
-        self.tool0SizeComboBox.addItem(_fromUtf8(""))
-        self.tool0SizeComboBox.addItem(_fromUtf8(""))
-        self.tool1SizeComboBox = QtGui.QComboBox(self.page)
-        self.tool1SizeComboBox.setGeometry(QtCore.QRect(103, 471, 367, 51))
+        self.testPrintsTool0SizeComboBox.setEditable(False)
+        self.testPrintsTool0SizeComboBox.setMaxVisibleItems(8)
+        self.testPrintsTool0SizeComboBox.setIconSize(QtCore.QSize(30, 30))
+        self.testPrintsTool0SizeComboBox.setObjectName(_fromUtf8("testPrintsTool0SizeComboBox"))
+        self.testPrintsTool0SizeComboBox.addItem(_fromUtf8(""))
+        self.testPrintsTool0SizeComboBox.addItem(_fromUtf8(""))
+        self.testPrintsTool0SizeComboBox.addItem(_fromUtf8(""))
+        self.testPrintsTool1SizeComboBox = QtGui.QComboBox(self.testPrintsPage1)
+        self.testPrintsTool1SizeComboBox.setGeometry(QtCore.QRect(103, 500, 367, 51))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(20)
-        self.tool1SizeComboBox.setFont(font)
-        self.tool1SizeComboBox.setStyleSheet(_fromUtf8(" QScrollBar:vertical {\n"
+        self.testPrintsTool1SizeComboBox.setFont(font)
+        self.testPrintsTool1SizeComboBox.setStyleSheet(_fromUtf8(" QScrollBar:vertical {\n"
 "     border: 1px solid black;\n"
 "border-radius: 5px;\n"
 "    background-color: rgb(40,40,40);\n"
@@ -3277,13 +3278,14 @@ class Ui_MainWindow(object):
 "    selection-background-color: rgb(40, 40, 40);\n"
 "    background: white;\n"
 "}"))
-        self.tool1SizeComboBox.setEditable(False)
-        self.tool1SizeComboBox.setMaxVisibleItems(8)
-        self.tool1SizeComboBox.setIconSize(QtCore.QSize(30, 30))
-        self.tool1SizeComboBox.setObjectName(_fromUtf8("tool1SizeComboBox"))
-        self.tool1SizeComboBox.addItem(_fromUtf8(""))
-        self.tool1SizeComboBox.addItem(_fromUtf8(""))
-        self.tool0Label_2 = QtGui.QLabel(self.page)
+        self.testPrintsTool1SizeComboBox.setEditable(False)
+        self.testPrintsTool1SizeComboBox.setMaxVisibleItems(8)
+        self.testPrintsTool1SizeComboBox.setIconSize(QtCore.QSize(30, 30))
+        self.testPrintsTool1SizeComboBox.setObjectName(_fromUtf8("testPrintsTool1SizeComboBox"))
+        self.testPrintsTool1SizeComboBox.addItem(_fromUtf8(""))
+        self.testPrintsTool1SizeComboBox.addItem(_fromUtf8(""))
+        self.testPrintsTool1SizeComboBox.addItem(_fromUtf8(""))
+        self.tool0Label_2 = QtGui.QLabel(self.testPrintsPage1)
         self.tool0Label_2.setGeometry(QtCore.QRect(31, 288, 50, 50))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
@@ -3299,7 +3301,7 @@ class Ui_MainWindow(object):
         self.tool0Label_2.setPixmap(QtGui.QPixmap(_fromUtf8("templates/img/Nozzle.png")))
         self.tool0Label_2.setScaledContents(True)
         self.tool0Label_2.setObjectName(_fromUtf8("tool0Label_2"))
-        self.tool0TargetTemperature_5 = QtGui.QLabel(self.page)
+        self.tool0TargetTemperature_5 = QtGui.QLabel(self.testPrintsPage1)
         self.tool0TargetTemperature_5.setGeometry(QtCore.QRect(10, 300, 41, 21))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
@@ -3314,8 +3316,8 @@ class Ui_MainWindow(object):
 "background-color: rgba(255, 255, 255, 0);"))
         self.tool0TargetTemperature_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.tool0TargetTemperature_5.setObjectName(_fromUtf8("tool0TargetTemperature_5"))
-        self.tool1Label_2 = QtGui.QLabel(self.page)
-        self.tool1Label_2.setGeometry(QtCore.QRect(30, 477, 50, 50))
+        self.tool1Label_2 = QtGui.QLabel(self.testPrintsPage1)
+        self.tool1Label_2.setGeometry(QtCore.QRect(30, 506, 50, 50))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
         font.setPointSize(14)
@@ -3330,8 +3332,8 @@ class Ui_MainWindow(object):
         self.tool1Label_2.setPixmap(QtGui.QPixmap(_fromUtf8("templates/img/Nozzle.png")))
         self.tool1Label_2.setScaledContents(True)
         self.tool1Label_2.setObjectName(_fromUtf8("tool1Label_2"))
-        self.tool0TargetTemperature_6 = QtGui.QLabel(self.page)
-        self.tool0TargetTemperature_6.setGeometry(QtCore.QRect(10, 490, 41, 21))
+        self.tool0TargetTemperature_6 = QtGui.QLabel(self.testPrintsPage1)
+        self.tool0TargetTemperature_6.setGeometry(QtCore.QRect(10, 519, 41, 21))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(14)
@@ -3345,7 +3347,7 @@ class Ui_MainWindow(object):
 "background-color: rgba(255, 255, 255, 0);"))
         self.tool0TargetTemperature_6.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.tool0TargetTemperature_6.setObjectName(_fromUtf8("tool0TargetTemperature_6"))
-        self.calibrateLabel_3 = QtGui.QLabel(self.page)
+        self.calibrateLabel_3 = QtGui.QLabel(self.testPrintsPage1)
         self.calibrateLabel_3.setGeometry(QtCore.QRect(9, 192, 465, 31))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
@@ -3355,13 +3357,13 @@ class Ui_MainWindow(object):
         self.calibrateLabel_3.setFont(font)
         self.calibrateLabel_3.setStyleSheet(_fromUtf8("color: rgb(255, 255, 255);"))
         self.calibrateLabel_3.setObjectName(_fromUtf8("calibrateLabel_3"))
-        self.quickStep4NextButton_2 = QtGui.QPushButton(self.page)
-        self.quickStep4NextButton_2.setGeometry(QtCore.QRect(-1, 740, 241, 61))
+        self.testPrintsNextButton = QtGui.QPushButton(self.testPrintsPage1)
+        self.testPrintsNextButton.setGeometry(QtCore.QRect(-1, 740, 241, 61))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.quickStep4NextButton_2.setFont(font)
-        self.quickStep4NextButton_2.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.testPrintsNextButton.setFont(font)
+        self.testPrintsNextButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3384,15 +3386,15 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.quickStep4NextButton_2.setIconSize(QtCore.QSize(40, 40))
-        self.quickStep4NextButton_2.setObjectName(_fromUtf8("quickStep4NextButton_2"))
-        self.quickStep4CancelButton_2 = QtGui.QPushButton(self.page)
-        self.quickStep4CancelButton_2.setGeometry(QtCore.QRect(239, 740, 241, 61))
+        self.testPrintsNextButton.setIconSize(QtCore.QSize(40, 40))
+        self.testPrintsNextButton.setObjectName(_fromUtf8("testPrintsNextButton"))
+        self.testPrintsBackButton = QtGui.QPushButton(self.testPrintsPage1)
+        self.testPrintsBackButton.setGeometry(QtCore.QRect(239, 740, 241, 61))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.quickStep4CancelButton_2.setFont(font)
-        self.quickStep4CancelButton_2.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.testPrintsBackButton.setFont(font)
+        self.testPrintsBackButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3415,9 +3417,11 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.quickStep4CancelButton_2.setIconSize(QtCore.QSize(40, 40))
-        self.quickStep4CancelButton_2.setObjectName(_fromUtf8("quickStep4CancelButton_2"))
-        self.calibrateLabel_4 = QtGui.QLabel(self.page)
+        self.testPrintsBackButton.setText(_fromUtf8(""))
+        self.testPrintsBackButton.setIcon(icon4)
+        self.testPrintsBackButton.setIconSize(QtCore.QSize(40, 40))
+        self.testPrintsBackButton.setObjectName(_fromUtf8("testPrintsBackButton"))
+        self.calibrateLabel_4 = QtGui.QLabel(self.testPrintsPage1)
         self.calibrateLabel_4.setGeometry(QtCore.QRect(85, 64, 388, 96))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
@@ -3429,7 +3433,7 @@ class Ui_MainWindow(object):
         self.calibrateLabel_4.setScaledContents(False)
         self.calibrateLabel_4.setWordWrap(True)
         self.calibrateLabel_4.setObjectName(_fromUtf8("calibrateLabel_4"))
-        self.tool0Label_3 = QtGui.QLabel(self.page)
+        self.tool0Label_3 = QtGui.QLabel(self.testPrintsPage1)
         self.tool0Label_3.setGeometry(QtCore.QRect(20, 86, 50, 50))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
@@ -3445,17 +3449,45 @@ class Ui_MainWindow(object):
         self.tool0Label_3.setPixmap(QtGui.QPixmap(_fromUtf8("templates/img/exclamation-mark.png")))
         self.tool0Label_3.setScaledContents(True)
         self.tool0Label_3.setObjectName(_fromUtf8("tool0Label_3"))
-        self.stackedWidget.addWidget(self.page)
-        self.page_2 = QtGui.QWidget()
-        self.page_2.setObjectName(_fromUtf8("page_2"))
-        self.calibrateBackButton_2 = QtGui.QPushButton(self.page_2)
-        self.calibrateBackButton_2.setGeometry(QtCore.QRect(-1, 691, 481, 111))
-        self.calibrateBackButton_2.setMinimumSize(QtCore.QSize(0, 0))
+        self.calibrateLabel_8 = QtGui.QLabel(self.testPrintsPage1)
+        self.calibrateLabel_8.setGeometry(QtCore.QRect(90, 376, 388, 96))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Gotham"))
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.calibrateLabel_8.setFont(font)
+        self.calibrateLabel_8.setStyleSheet(_fromUtf8("color: rgb(255, 255, 255);"))
+        self.calibrateLabel_8.setScaledContents(False)
+        self.calibrateLabel_8.setWordWrap(True)
+        self.calibrateLabel_8.setObjectName(_fromUtf8("calibrateLabel_8"))
+        self.tool0Label_5 = QtGui.QLabel(self.testPrintsPage1)
+        self.tool0Label_5.setGeometry(QtCore.QRect(16, 400, 50, 50))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Gotham Medium"))
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setUnderline(False)
+        font.setWeight(50)
+        font.setStrikeOut(False)
+        self.tool0Label_5.setFont(font)
+        self.tool0Label_5.setStyleSheet(_fromUtf8("\n"
+"   color:  white;"))
+        self.tool0Label_5.setText(_fromUtf8(""))
+        self.tool0Label_5.setPixmap(QtGui.QPixmap(_fromUtf8("templates/img/exclamation-mark.png")))
+        self.tool0Label_5.setScaledContents(True)
+        self.tool0Label_5.setObjectName(_fromUtf8("tool0Label_5"))
+        self.stackedWidget.addWidget(self.testPrintsPage1)
+        self.testPrintsPage2 = QtGui.QWidget()
+        self.testPrintsPage2.setObjectName(_fromUtf8("testPrintsPage2"))
+        self.testPrintsCancelButton = QtGui.QPushButton(self.testPrintsPage2)
+        self.testPrintsCancelButton.setGeometry(QtCore.QRect(-1, 691, 481, 111))
+        self.testPrintsCancelButton.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Light"))
-        font.setPointSize(9)
-        self.calibrateBackButton_2.setFont(font)
-        self.calibrateBackButton_2.setStyleSheet(_fromUtf8("QPushButton {\n"
+        font.setPointSize(13)
+        self.testPrintsCancelButton.setFont(font)
+        self.testPrintsCancelButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3474,22 +3506,20 @@ class Ui_MainWindow(object):
 "QPushButton:default {\n"
 "    border-color: navy; /* make the default button prominent */\n"
 "}"))
-        self.calibrateBackButton_2.setText(_fromUtf8(""))
-        self.calibrateBackButton_2.setIcon(icon4)
-        self.calibrateBackButton_2.setIconSize(QtCore.QSize(50, 50))
-        self.calibrateBackButton_2.setCheckable(False)
-        self.calibrateBackButton_2.setAutoDefault(False)
-        self.calibrateBackButton_2.setDefault(False)
-        self.calibrateBackButton_2.setFlat(False)
-        self.calibrateBackButton_2.setObjectName(_fromUtf8("calibrateBackButton_2"))
-        self.dualCaliberationPrint = QtGui.QPushButton(self.page_2)
-        self.dualCaliberationPrint.setGeometry(QtCore.QRect(5, 192, 480, 70))
-        self.dualCaliberationPrint.setMinimumSize(QtCore.QSize(0, 70))
+        self.testPrintsCancelButton.setIconSize(QtCore.QSize(50, 50))
+        self.testPrintsCancelButton.setCheckable(False)
+        self.testPrintsCancelButton.setAutoDefault(False)
+        self.testPrintsCancelButton.setDefault(False)
+        self.testPrintsCancelButton.setFlat(False)
+        self.testPrintsCancelButton.setObjectName(_fromUtf8("testPrintsCancelButton"))
+        self.dualCaliberationPrintButton = QtGui.QPushButton(self.testPrintsPage2)
+        self.dualCaliberationPrintButton.setGeometry(QtCore.QRect(0, 192, 480, 70))
+        self.dualCaliberationPrintButton.setMinimumSize(QtCore.QSize(0, 70))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.dualCaliberationPrint.setFont(font)
-        self.dualCaliberationPrint.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.dualCaliberationPrintButton.setFont(font)
+        self.dualCaliberationPrintButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3512,16 +3542,16 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.dualCaliberationPrint.setIconSize(QtCore.QSize(40, 40))
-        self.dualCaliberationPrint.setObjectName(_fromUtf8("dualCaliberationPrint"))
-        self.bedLevelPrint = QtGui.QPushButton(self.page_2)
-        self.bedLevelPrint.setGeometry(QtCore.QRect(5, 260, 480, 70))
-        self.bedLevelPrint.setMinimumSize(QtCore.QSize(0, 70))
+        self.dualCaliberationPrintButton.setIconSize(QtCore.QSize(40, 40))
+        self.dualCaliberationPrintButton.setObjectName(_fromUtf8("dualCaliberationPrintButton"))
+        self.bedLevelPrintButton = QtGui.QPushButton(self.testPrintsPage2)
+        self.bedLevelPrintButton.setGeometry(QtCore.QRect(0, 260, 480, 70))
+        self.bedLevelPrintButton.setMinimumSize(QtCore.QSize(0, 70))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.bedLevelPrint.setFont(font)
-        self.bedLevelPrint.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.bedLevelPrintButton.setFont(font)
+        self.bedLevelPrintButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3544,16 +3574,16 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.bedLevelPrint.setIconSize(QtCore.QSize(40, 40))
-        self.bedLevelPrint.setObjectName(_fromUtf8("bedLevelPrint"))
-        self.stressTestPrint = QtGui.QPushButton(self.page_2)
-        self.stressTestPrint.setGeometry(QtCore.QRect(5, 329, 480, 70))
-        self.stressTestPrint.setMinimumSize(QtCore.QSize(0, 70))
+        self.bedLevelPrintButton.setIconSize(QtCore.QSize(40, 40))
+        self.bedLevelPrintButton.setObjectName(_fromUtf8("bedLevelPrintButton"))
+        self.movementTestPrintButton = QtGui.QPushButton(self.testPrintsPage2)
+        self.movementTestPrintButton.setGeometry(QtCore.QRect(0, 329, 480, 70))
+        self.movementTestPrintButton.setMinimumSize(QtCore.QSize(0, 70))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.stressTestPrint.setFont(font)
-        self.stressTestPrint.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.movementTestPrintButton.setFont(font)
+        self.movementTestPrintButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3576,16 +3606,16 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.stressTestPrint.setIconSize(QtCore.QSize(40, 40))
-        self.stressTestPrint.setObjectName(_fromUtf8("stressTestPrint"))
-        self.singleNozzlePrint = QtGui.QPushButton(self.page_2)
-        self.singleNozzlePrint.setGeometry(QtCore.QRect(5, 392, 480, 70))
-        self.singleNozzlePrint.setMinimumSize(QtCore.QSize(0, 70))
+        self.movementTestPrintButton.setIconSize(QtCore.QSize(40, 40))
+        self.movementTestPrintButton.setObjectName(_fromUtf8("movementTestPrintButton"))
+        self.singleNozzlePrintButton = QtGui.QPushButton(self.testPrintsPage2)
+        self.singleNozzlePrintButton.setGeometry(QtCore.QRect(0, 392, 480, 70))
+        self.singleNozzlePrintButton.setMinimumSize(QtCore.QSize(0, 70))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.singleNozzlePrint.setFont(font)
-        self.singleNozzlePrint.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.singleNozzlePrintButton.setFont(font)
+        self.singleNozzlePrintButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3608,16 +3638,16 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.singleNozzlePrint.setIconSize(QtCore.QSize(40, 40))
-        self.singleNozzlePrint.setObjectName(_fromUtf8("singleNozzlePrint"))
-        self.dualNozzlePrint = QtGui.QPushButton(self.page_2)
-        self.dualNozzlePrint.setGeometry(QtCore.QRect(5, 453, 480, 70))
-        self.dualNozzlePrint.setMinimumSize(QtCore.QSize(0, 70))
+        self.singleNozzlePrintButton.setIconSize(QtCore.QSize(40, 40))
+        self.singleNozzlePrintButton.setObjectName(_fromUtf8("singleNozzlePrintButton"))
+        self.dualNozzlePrintButton = QtGui.QPushButton(self.testPrintsPage2)
+        self.dualNozzlePrintButton.setGeometry(QtCore.QRect(0, 453, 480, 70))
+        self.dualNozzlePrintButton.setMinimumSize(QtCore.QSize(0, 70))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(13)
-        self.dualNozzlePrint.setFont(font)
-        self.dualNozzlePrint.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.dualNozzlePrintButton.setFont(font)
+        self.dualNozzlePrintButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
@@ -3640,9 +3670,9 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.dualNozzlePrint.setIconSize(QtCore.QSize(40, 40))
-        self.dualNozzlePrint.setObjectName(_fromUtf8("dualNozzlePrint"))
-        self.tool0Label_4 = QtGui.QLabel(self.page_2)
+        self.dualNozzlePrintButton.setIconSize(QtCore.QSize(40, 40))
+        self.dualNozzlePrintButton.setObjectName(_fromUtf8("dualNozzlePrintButton"))
+        self.tool0Label_4 = QtGui.QLabel(self.testPrintsPage2)
         self.tool0Label_4.setGeometry(QtCore.QRect(18, 67, 50, 50))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham Medium"))
@@ -3658,7 +3688,7 @@ class Ui_MainWindow(object):
         self.tool0Label_4.setPixmap(QtGui.QPixmap(_fromUtf8("templates/img/exclamation-mark.png")))
         self.tool0Label_4.setScaledContents(True)
         self.tool0Label_4.setObjectName(_fromUtf8("tool0Label_4"))
-        self.calibrateLabel_5 = QtGui.QLabel(self.page_2)
+        self.calibrateLabel_5 = QtGui.QLabel(self.testPrintsPage2)
         self.calibrateLabel_5.setGeometry(QtCore.QRect(83, 45, 388, 96))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
@@ -3670,7 +3700,7 @@ class Ui_MainWindow(object):
         self.calibrateLabel_5.setScaledContents(False)
         self.calibrateLabel_5.setWordWrap(True)
         self.calibrateLabel_5.setObjectName(_fromUtf8("calibrateLabel_5"))
-        self.stackedWidget.addWidget(self.page_2)
+        self.stackedWidget.addWidget(self.testPrintsPage2)
         self.toolOffsetXYPage = QtGui.QWidget()
         self.toolOffsetXYPage.setObjectName(_fromUtf8("toolOffsetXYPage"))
         self.tollOffsetXLabel = QtGui.QLabel(self.toolOffsetXYPage)
@@ -8168,7 +8198,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.mainApplication)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(16)
         self.controlTabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -8270,21 +8300,24 @@ class Ui_MainWindow(object):
         self.toolOffsetZButton.setText(_translate("MainWindow", "Tool Offsets Z", None))
         self.testPrintsButton.setText(_translate("MainWindow", "Test Prints", None))
         self.calibrateLabel_2.setText(_translate("MainWindow", "Caliberation and Test Prints :", None))
-        self.tool0SizeComboBox.setItemText(0, _translate("MainWindow", "Normal", None))
-        self.tool0SizeComboBox.setItemText(1, _translate("MainWindow", "Flipped", None))
-        self.tool1SizeComboBox.setItemText(0, _translate("MainWindow", "Normal", None))
-        self.tool1SizeComboBox.setItemText(1, _translate("MainWindow", "Flipped", None))
+        self.testPrintsTool0SizeComboBox.setItemText(0, _translate("MainWindow", "0.6", None))
+        self.testPrintsTool0SizeComboBox.setItemText(1, _translate("MainWindow", "0.4", None))
+        self.testPrintsTool0SizeComboBox.setItemText(2, _translate("MainWindow", "0.8", None))
+        self.testPrintsTool1SizeComboBox.setItemText(0, _translate("MainWindow", "0.6", None))
+        self.testPrintsTool1SizeComboBox.setItemText(1, _translate("MainWindow", "0.4", None))
+        self.testPrintsTool1SizeComboBox.setItemText(2, _translate("MainWindow", "0.8", None))
         self.tool0TargetTemperature_5.setText(_translate("MainWindow", "0", None))
         self.tool0TargetTemperature_6.setText(_translate("MainWindow", "1", None))
-        self.calibrateLabel_3.setText(_translate("MainWindow", "Select Installed Nozzles:", None))
-        self.quickStep4NextButton_2.setText(_translate("MainWindow", "Next", None))
-        self.quickStep4CancelButton_2.setText(_translate("MainWindow", "Cancel", None))
+        self.calibrateLabel_3.setText(_translate("MainWindow", "Select Installed Nozzles DIameter\'s:", None))
+        self.testPrintsNextButton.setText(_translate("MainWindow", "Next", None))
         self.calibrateLabel_4.setText(_translate("MainWindow", "Ensure PLA material of different colors are loaded into both nozzles before continuing ", None))
-        self.dualCaliberationPrint.setText(_translate("MainWindow", "Dual Caliberation Print", None))
-        self.bedLevelPrint.setText(_translate("MainWindow", "Bed Leveling Print", None))
-        self.stressTestPrint.setText(_translate("MainWindow", "Movement Stress Test", None))
-        self.singleNozzlePrint.setText(_translate("MainWindow", "Single Nozzle Test Print", None))
-        self.dualNozzlePrint.setText(_translate("MainWindow", "Dual Nozzle Test Print", None))
+        self.calibrateLabel_8.setText(_translate("MainWindow", "Ensure Tool 1 nozzle diameter is greater or equal to the nozzle diameter of Tool 0", None))
+        self.testPrintsCancelButton.setText(_translate("MainWindow", "Cancel", None))
+        self.dualCaliberationPrintButton.setText(_translate("MainWindow", "Dual Caliberation Print", None))
+        self.bedLevelPrintButton.setText(_translate("MainWindow", "Bed Leveling Print", None))
+        self.movementTestPrintButton.setText(_translate("MainWindow", "Movement Stress Test", None))
+        self.singleNozzlePrintButton.setText(_translate("MainWindow", "Single Nozzle Test Print", None))
+        self.dualNozzlePrintButton.setText(_translate("MainWindow", "Dual Nozzle Test Print", None))
         self.calibrateLabel_5.setText(_translate("MainWindow", "Ensure PLA material of different colors are loaded into both nozzles before continuing ", None))
         self.tollOffsetXLabel.setText(_translate("MainWindow", "X:", None))
         self.toolOffsetLabel.setText(_translate("MainWindow", "Tool Offset X/Y :", None))

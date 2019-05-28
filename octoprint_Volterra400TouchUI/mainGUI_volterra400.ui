@@ -45,7 +45,7 @@ QStatusBar::item {
     </property>
     <property name="geometry">
      <rect>
-      <x>-6</x>
+      <x>0</x>
       <y>0</y>
       <width>480</width>
       <height>800</height>
@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>16</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -5392,7 +5392,7 @@ QToolButton:focus {
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page">
+    <widget class="QWidget" name="testPrintsPage1">
      <widget class="QLabel" name="calibrateLabel_2">
       <property name="geometry">
        <rect>
@@ -5417,7 +5417,7 @@ QToolButton:focus {
        <string>Caliberation and Test Prints :</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="tool0SizeComboBox">
+     <widget class="QComboBox" name="testPrintsTool0SizeComboBox">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -5547,20 +5547,25 @@ QComboBox QAbstractItemView {
       </property>
       <item>
        <property name="text">
-        <string>Normal</string>
+        <string>0.6</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Flipped</string>
+        <string>0.4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.8</string>
        </property>
       </item>
      </widget>
-     <widget class="QComboBox" name="tool1SizeComboBox">
+     <widget class="QComboBox" name="testPrintsTool1SizeComboBox">
       <property name="geometry">
        <rect>
         <x>103</x>
-        <y>471</y>
+        <y>500</y>
         <width>367</width>
         <height>51</height>
        </rect>
@@ -5686,12 +5691,17 @@ QComboBox QAbstractItemView {
       </property>
       <item>
        <property name="text">
-        <string>Normal</string>
+        <string>0.6</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Flipped</string>
+        <string>0.4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.8</string>
        </property>
       </item>
      </widget>
@@ -5763,7 +5773,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>477</y>
+        <y>506</y>
         <width>50</width>
         <height>50</height>
        </rect>
@@ -5796,7 +5806,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>490</y>
+        <y>519</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -5844,10 +5854,10 @@ background-color: rgba(255, 255, 255, 0);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Select Installed Nozzles:</string>
+       <string>Select Installed Nozzles DIameter's:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="quickStep4NextButton_2">
+     <widget class="QPushButton" name="testPrintsNextButton">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -5897,7 +5907,7 @@ QPushButton:focus {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="quickStep4CancelButton_2">
+     <widget class="QPushButton" name="testPrintsBackButton">
       <property name="geometry">
        <rect>
         <x>239</x>
@@ -5938,7 +5948,11 @@ QPushButton:focus {
 }</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>templates/img/arrows-4.png</normaloff>templates/img/arrows-4.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -6010,9 +6024,72 @@ QPushButton:focus {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="calibrateLabel_8">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>376</y>
+        <width>388</width>
+        <height>96</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Gotham</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Ensure Tool 1 nozzle diameter is greater or equal to the nozzle diameter of Tool 0</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tool0Label_5">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>400</y>
+        <width>50</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Gotham Medium</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+   color:  white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>templates/img/exclamation-mark.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="calibrateBackButton_2">
+    <widget class="QWidget" name="testPrintsPage2">
+     <widget class="QPushButton" name="testPrintsCancelButton">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -6030,7 +6107,7 @@ QPushButton:focus {
       <property name="font">
        <font>
         <family>Gotham Light</family>
-        <pointsize>9</pointsize>
+        <pointsize>13</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -6055,11 +6132,7 @@ QPushButton:default {
 }</string>
       </property>
       <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>templates/img/arrows-4.png</normaloff>templates/img/arrows-4.png</iconset>
+       <string>Cancel</string>
       </property>
       <property name="iconSize">
        <size>
@@ -6080,10 +6153,10 @@ QPushButton:default {
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="dualCaliberationPrint">
+     <widget class="QPushButton" name="dualCaliberationPrintButton">
       <property name="geometry">
        <rect>
-        <x>5</x>
+        <x>0</x>
         <y>192</y>
         <width>480</width>
         <height>70</height>
@@ -6136,10 +6209,10 @@ QPushButton:focus {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="bedLevelPrint">
+     <widget class="QPushButton" name="bedLevelPrintButton">
       <property name="geometry">
        <rect>
-        <x>5</x>
+        <x>0</x>
         <y>260</y>
         <width>480</width>
         <height>70</height>
@@ -6192,10 +6265,10 @@ QPushButton:focus {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="stressTestPrint">
+     <widget class="QPushButton" name="movementTestPrintButton">
       <property name="geometry">
        <rect>
-        <x>5</x>
+        <x>0</x>
         <y>329</y>
         <width>480</width>
         <height>70</height>
@@ -6248,10 +6321,10 @@ QPushButton:focus {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="singleNozzlePrint">
+     <widget class="QPushButton" name="singleNozzlePrintButton">
       <property name="geometry">
        <rect>
-        <x>5</x>
+        <x>0</x>
         <y>392</y>
         <width>480</width>
         <height>70</height>
@@ -6304,10 +6377,10 @@ QPushButton:focus {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="dualNozzlePrint">
+     <widget class="QPushButton" name="dualNozzlePrintButton">
       <property name="geometry">
        <rect>
-        <x>5</x>
+        <x>0</x>
         <y>453</y>
         <width>480</width>
         <height>70</height>
