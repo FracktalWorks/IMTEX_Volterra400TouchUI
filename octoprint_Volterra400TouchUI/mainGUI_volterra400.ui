@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -1694,7 +1694,10 @@ background-color: rgba(255, 255, 255, 0);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QToolButton" name="doorUnlockButton">
+     <widget class="QToolButton" name="doorLockButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -1745,7 +1748,8 @@ QToolButton:default {
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>templates/img/door.png</normaloff>templates/img/door.png</iconset>
+        <normaloff>templates/img/doorUnlock.png</normaloff>
+        <normalon>templates/img/doorLock.png</normalon>templates/img/doorUnlock.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1754,10 +1758,16 @@ QToolButton:default {
        </size>
       </property>
       <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
        <bool>false</bool>
       </property>
       <property name="toolButtonStyle">
        <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QToolButton" name="printPreviewButton">
@@ -1895,7 +1905,7 @@ QToolButton:default {
      <zorder>celciusLabel_5</zorder>
      <zorder>tool0TargetTemperature_2</zorder>
      <zorder>tool0TargetTemperature_3</zorder>
-     <zorder>doorUnlockButton</zorder>
+     <zorder>doorLockButton</zorder>
      <zorder>printPreviewButton</zorder>
      <zorder>line_8</zorder>
      <zorder>line_9</zorder>

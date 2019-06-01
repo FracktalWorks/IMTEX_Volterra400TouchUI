@@ -371,10 +371,10 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
 
         # Home Screen:
         self.stopButton.pressed.connect(self.stopActionMessageBox)
-        # self.menuButton.pressed.connect(self.keyboardButton)
         self.menuButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.MenuPage))
         self.controlButton.pressed.connect(self.control)
         self.playPauseButton.clicked.connect(self.playPauseAction)
+        self.doorLockButton.clicked.connect(self.doorLock)
 
         # MenuScreen
         self.menuBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.homePage))
@@ -575,6 +575,24 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
 
         # Filament sensor toggle
         self.toggleFilamentSensorButton.clicked.connect(self.toggleFilamentSensor)
+
+
+    ''' +++++++++++++++++++++++++Print Restore+++++++++++++++++++++++++++++++++++ '''
+
+    def doorLock(self):
+        '''
+        function that toggles locking and unlocking the front door
+        :return:
+        '''
+
+        if self.doorLockButton.isChecked():   #should unlock door, because the button as to unlock door when button was pressed
+            self.doorLockButton.setText('Lock Door') #shows option to Lock the door
+            self.octopiclient.doorLock(state=1) #Unlocks the door
+        else:
+            self.doorLockButton.setText('Unlock Door') #shows option to unlock the door now
+            self.octopiclient.doorLock(state=0) #locks the door
+
+
 
     ''' +++++++++++++++++++++++++Print Restore+++++++++++++++++++++++++++++++++++ '''
 
@@ -1479,6 +1497,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.changeFilamentButton.setDisabled(True)
             self.menuCalibrateButton.setDisabled(True)
             self.menuPrintButton.setDisabled(True)
+            self.doorUnlockButton.setDisabled(False)
 
         elif status == "Paused":
             self.playPauseButton.setChecked(False)
@@ -1487,6 +1506,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.changeFilamentButton.setDisabled(False)
             self.menuCalibrateButton.setDisabled(True)
             self.menuPrintButton.setDisabled(True)
+            self.doorUnlockButton.setDisabled(True)
 
         else:
             self.stopButton.setDisabled(True)
@@ -1495,6 +1515,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.changeFilamentButton.setDisabled(False)
             self.menuCalibrateButton.setDisabled(False)
             self.menuPrintButton.setDisabled(False)
+            self.doorUnlockButton.setDisabled(True)
 
     ''' ++++++++++++++++++++++++++++Active Extruder/Tool Change++++++++++++++++++++++++ '''
 

@@ -664,3 +664,12 @@ class octoprintAPI:
         payload = {'restore': restore, "interval" : interval, "enabled": enabled}
         requests.post(url, data=json.dumps(payload), headers=headers)
 
+    def doorLock(self, state):
+        '''
+        locks and unlocks the front door, needs Volterra plugin installed
+        '''
+        url = 'http://' + self.ip + '/plugin/VolterraVAS/lock_override/'+str(state)
+        headers = {'content-type': 'application/json', 'X-Api-Key': self.apiKey}
+        temp = requests.get(url, headers=headers)
+        return temp
+
