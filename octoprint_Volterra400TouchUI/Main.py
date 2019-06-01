@@ -418,15 +418,20 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.testPrintsBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
         self.testPrintsCancelButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.calibratePage))
         self.dualCaliberationPrintButton.pressed.connect(
-            lambda: self.testPrint(self.testPrintsTool0SizeComboBox,self.testPrintsTool1SizeComboBox,'dualCalibration'))
+            lambda: self.testPrint(str(self.testPrintsTool0SizeComboBox.currentText()).replace('.', ''),
+                                   str(self.testPrintsTool1SizeComboBox.currentText()).replace('.', ''), 'dualCalibration'))
         self.bedLevelPrintButton.pressed.connect(
-            lambda: self.testPrint(self.testPrintsTool0SizeComboBox,self.testPrintsTool1SizeComboBox,'bedLevel'))
+            lambda: self.testPrint(str(self.testPrintsTool0SizeComboBox.currentText()).replace('.', ''),
+                                   str(self.testPrintsTool1SizeComboBox.currentText()).replace('.', ''), 'bedLevel'))
         self.movementTestPrintButton.pressed.connect(
-            lambda: self.testPrint(self.testPrintsTool0SizeComboBox, self.testPrintsTool1SizeComboBox, 'movementTest'))
+            lambda: self.testPrint(str(self.testPrintsTool0SizeComboBox.currentText()).replace('.', ''),
+                                   str(self.testPrintsTool1SizeComboBox.currentText()).replace('.', ''), 'movementTest'))
         self.singleNozzlePrintButton.pressed.connect(
-            lambda: self.testPrint(self.testPrintsTool0SizeComboBox, self.testPrintsTool1SizeComboBox, 'dualTest'))
+            lambda: self.testPrint(str(self.testPrintsTool0SizeComboBox.currentText()).replace('.', ''),
+                                   str(self.testPrintsTool1SizeComboBox.currentText()).replace('.', ''), 'dualTest'))
         self.dualNozzlePrintButton.pressed.connect(
-            lambda: self.testPrint(self.testPrintsTool0SizeComboBox, self.testPrintsTool1SizeComboBox, 'singleTest'))
+            lambda: self.testPrint(str(self.testPrintsTool0SizeComboBox.currentText()).replace('.', ''),
+                                   str(self.testPrintsTool1SizeComboBox.currentText()).replace('.', ''), 'singleTest'))
 
         # PrintLocationScreen
         self.printLocationScreenBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.MenuPage))
@@ -482,7 +487,15 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.toolToggleMotionButton.clicked.connect(self.selectToolMotion)
         self.controlBackButton.pressed.connect(lambda: self.stackedWidget.setCurrentWidget(self.homePage))
         self.setToolTempButton.pressed.connect(self.setToolTemp)
+        self.tool180PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M104 T1 S180') if self.toolToggleTemperatureButton.isChecked() else octopiclient.gcode(command='M104 T0 S180'))
+        self.tool220PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M104 T1 S220') if self.toolToggleTemperatureButton.isChecked() else octopiclient.gcode(command='M104 T0 S220'))
+        self.tool250PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M104 T1 S250') if self.toolToggleTemperatureButton.isChecked() else octopiclient.gcode(command='M104 T0 S250'))
         self.setBedTempButton.pressed.connect(lambda: octopiclient.setBedTemperature(self.bedTempSpinBox.value()))
+        self.bed60PreheatButton.pressed.connect(lambda: octopiclient.setBedTemperature(target=60))
+        self.bed100PreheatButton.pressed.connect(lambda: octopiclient.setBedTemperature(target=100))
+        self.setChamberTempButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S' + str(self.chamberTempSpinBox.value())))
+        self.chamber50PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S50'))
+        self.chamber90PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S90'))
         self.setFlowRateButton.pressed.connect(lambda: octopiclient.flowrate(self.flowRateSpinBox.value()))
         self.setFeedRateButton.pressed.connect(lambda: octopiclient.feedrate(self.feedRateSpinBox.value()))
 
@@ -1338,7 +1351,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.chamberActualTemperatute.setText(str(int(temperature['chamberActual'])))  # + unichr(176))
         self.chamberTargetTemperature.setText(str(int(temperature['chamberActual'])))  # + unichr(176))
 
-        if temperature['filboxActual'] > 45:
+        if temperature['filboxActual'] > 40:
             self.filboxTempBar.setMaximum(80)
             self.filboxTempBar.setStyleSheet(styles.bar_heater_heating)
         else:
@@ -1779,24 +1792,23 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         :return:
         '''
         if gcode is 'bedLevel':
-            self.printFromPath('gcode/' + str(tool0Diameter) + '_BedLeveling.gcode', True)
+            self.printFromPath('gcode/' + tool0Diameter + '_BedLeveling.gcode', True)
         elif gcode is 'dualCalibration':
             self.printFromPath(
-                'gcode/' + str(tool0Diameter) + '_' + str(tool1Diameter) + '_dual_extruder_calibration_Volterra.gcode',
+                'gcode/' + tool0Diameter + '_' + tool1Diameter + '_dual_extruder_calibration_Volterra.gcode',
                 True)
         elif gcode is 'movementTest':
             self.printFromPath('gcode/movementTest', True)
         elif gcode is 'dualTest':
             self.printFromPath(
-                'gcode/' + str(tool0Diameter) + '_' + str(tool1Diameter) + '_Fracktal_logo_Volterra.gcode',
+                'gcode/' + tool0Diameter + '_' + tool1Diameter + '_Fracktal_logo_Volterra.gcode',
                 True)
         elif gcode is 'singleTest':
-            self.printFromPath('gcode/' + str(tool0Diameter) + '_Fracktal_logo_Volterra.gcode',True)
+            self.printFromPath('gcode/' + tool0Diameter + '_Fracktal_logo_Volterra.gcode',True)
 
         else:
             print 'gcode not found'
 
-            #check nozzle nize and print
     def printFromPath(self,path,prnt=True):
         '''
         Transfers a file from a specific to octoprint's watched folder so that it gets automatically detected by Octoprint.

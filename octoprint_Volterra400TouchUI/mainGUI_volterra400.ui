@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>16</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -353,7 +353,7 @@ QPushButton:focus {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>390</y>
+        <y>434</y>
         <width>35</width>
         <height>35</height>
        </rect>
@@ -385,8 +385,8 @@ QPushButton:focus {
      <widget class="QLabel" name="FileNameLabel">
       <property name="geometry">
        <rect>
-        <x>15</x>
-        <y>540</y>
+        <x>10</x>
+        <y>560</y>
         <width>61</width>
         <height>21</height>
        </rect>
@@ -409,8 +409,8 @@ QPushButton:focus {
      <widget class="QLabel" name="printTimeLabel">
       <property name="geometry">
        <rect>
-        <x>15</x>
-        <y>570</y>
+        <x>10</x>
+        <y>590</y>
         <width>171</width>
         <height>21</height>
        </rect>
@@ -433,10 +433,10 @@ QPushButton:focus {
      <widget class="QLabel" name="fileName">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>540</y>
+        <x>75</x>
+        <y>560</y>
         <width>401</width>
-        <height>21</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
@@ -462,8 +462,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="printTime">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>560</y>
+        <x>185</x>
+        <y>580</y>
         <width>281</width>
         <height>31</height>
        </rect>
@@ -485,8 +485,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="timeLeftLabel">
       <property name="geometry">
        <rect>
-        <x>15</x>
-        <y>600</y>
+        <x>10</x>
+        <y>620</y>
         <width>161</width>
         <height>21</height>
        </rect>
@@ -510,7 +510,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>243</x>
-        <y>362</y>
+        <y>401</y>
         <width>20</width>
         <height>100</height>
        </rect>
@@ -550,7 +550,7 @@ QProgressBar {
       <property name="geometry">
        <rect>
         <x>187</x>
-        <y>375</y>
+        <y>420</y>
         <width>55</width>
         <height>55</height>
        </rect>
@@ -584,7 +584,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>340</y>
+        <y>380</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -615,7 +615,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>56</x>
-        <y>361</y>
+        <y>400</y>
         <width>20</width>
         <height>100</height>
        </rect>
@@ -655,7 +655,7 @@ QProgressBar {
       <property name="geometry">
        <rect>
         <x>12</x>
-        <y>460</y>
+        <y>500</y>
         <width>49</width>
         <height>20</height>
        </rect>
@@ -686,7 +686,7 @@ background-color: rgba(0, 0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>460</y>
+        <y>500</y>
         <width>47</width>
         <height>21</height>
        </rect>
@@ -717,7 +717,7 @@ background-color: rgba(0, 0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>206</x>
-        <y>342</y>
+        <y>380</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -873,8 +873,8 @@ QProgressBar {
      <widget class="QLabel" name="timeLeft">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>600</y>
+        <x>175</x>
+        <y>620</y>
         <width>281</width>
         <height>21</height>
        </rect>
@@ -1038,7 +1038,7 @@ QPushButton:focus {
       <property name="geometry">
        <rect>
         <x>253</x>
-        <y>340</y>
+        <y>380</y>
         <width>19</width>
         <height>21</height>
        </rect>
@@ -1066,7 +1066,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>340</y>
+        <y>380</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1097,7 +1097,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>390</y>
+        <y>434</y>
         <width>35</width>
         <height>35</height>
        </rect>
@@ -1130,7 +1130,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>360</y>
+        <y>401</y>
         <width>20</width>
         <height>100</height>
        </rect>
@@ -1170,7 +1170,7 @@ QProgressBar {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>460</y>
+        <y>500</y>
         <width>58</width>
         <height>20</height>
        </rect>
@@ -1229,8 +1229,8 @@ background-color: rgba(0, 0, 0, 0);</string>
      <widget class="QLabel" name="printPreviewMain">
       <property name="geometry">
        <rect>
-        <x>83</x>
-        <y>72</y>
+        <x>100</x>
+        <y>70</y>
         <width>281</width>
         <height>271</height>
        </rect>
@@ -1252,7 +1252,7 @@ background-color: rgba(0, 0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>340</y>
+        <y>380</y>
         <width>22</width>
         <height>21</height>
        </rect>
@@ -1280,7 +1280,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>340</y>
+        <y>380</y>
         <width>23</width>
         <height>21</height>
        </rect>
@@ -1308,7 +1308,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>392</y>
+        <y>430</y>
         <width>45</width>
         <height>45</height>
        </rect>
@@ -1342,7 +1342,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>360</y>
+        <y>401</y>
         <width>20</width>
         <height>100</height>
        </rect>
@@ -1382,7 +1382,7 @@ QProgressBar {
       <property name="geometry">
        <rect>
         <x>300</x>
-        <y>460</y>
+        <y>500</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1413,7 +1413,7 @@ background-color: rgba(0, 0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>356</x>
-        <y>340</y>
+        <y>380</y>
         <width>23</width>
         <height>21</height>
        </rect>
@@ -1441,7 +1441,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>297</x>
-        <y>340</y>
+        <y>380</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1472,7 +1472,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>439</x>
-        <y>362</y>
+        <y>401</y>
         <width>20</width>
         <height>100</height>
        </rect>
@@ -1512,7 +1512,7 @@ QProgressBar {
       <property name="geometry">
        <rect>
         <x>389</x>
-        <y>394</y>
+        <y>430</y>
         <width>45</width>
         <height>45</height>
        </rect>
@@ -1546,7 +1546,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>399</x>
-        <y>462</y>
+        <y>500</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1577,7 +1577,7 @@ background-color: rgba(0, 0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>396</x>
-        <y>342</y>
+        <y>380</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1608,7 +1608,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>455</x>
-        <y>342</y>
+        <y>378</y>
         <width>23</width>
         <height>21</height>
        </rect>
@@ -1636,7 +1636,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>-15</x>
-        <y>396</y>
+        <y>440</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1667,7 +1667,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <property name="geometry">
        <rect>
         <x>72</x>
-        <y>396</y>
+        <y>440</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -1692,6 +1692,165 @@ background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="doorUnlockButton">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>111</y>
+        <width>90</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Gotham Light</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolButton {
+	padding-top: 20px;
+     border: 1px solid rgb(87, 87, 87);
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));
+
+border-top-left-radius: 10px;
+
+
+
+}
+
+QToolButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QToolButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QToolButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+      </property>
+      <property name="text">
+       <string>Unlock Door</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>templates/img/door.png</normaloff>templates/img/door.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="printPreviewButton">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>210</y>
+        <width>90</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Gotham Light</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolButton {
+	padding-top: 20px;
+     border: 1px solid rgb(87, 87, 87);
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));
+
+border-bottom-left-radius: 10px;
+
+
+
+}
+
+QToolButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QToolButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QToolButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+      </property>
+      <property name="text">
+       <string>Print View</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>templates/img/camera.png</normaloff>
+        <normalon>templates/img/3d-cube.png</normalon>templates/img/camera.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_8">
+      <property name="geometry">
+       <rect>
+        <x>28</x>
+        <y>350</y>
+        <width>416</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_9">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>530</y>
+        <width>415</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
      <zorder>timeLeftLabel</zorder>
@@ -1736,6 +1895,10 @@ background-color: rgba(255, 255, 255, 0);</string>
      <zorder>celciusLabel_5</zorder>
      <zorder>tool0TargetTemperature_2</zorder>
      <zorder>tool0TargetTemperature_3</zorder>
+     <zorder>doorUnlockButton</zorder>
+     <zorder>printPreviewButton</zorder>
+     <zorder>line_8</zorder>
+     <zorder>line_9</zorder>
     </widget>
     <widget class="QWidget" name="MenuPage">
      <widget class="QPushButton" name="menuBackButton">
@@ -4174,8 +4337,8 @@ QComboBox QAbstractItemView {
      <widget class="QLabel" name="hostnameLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>0</y>
+        <x>1</x>
+        <y>235</y>
         <width>240</width>
         <height>31</height>
        </rect>
@@ -4199,8 +4362,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="hostname">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>22</y>
+        <x>1</x>
+        <y>257</y>
         <width>240</width>
         <height>51</height>
        </rect>
@@ -4224,8 +4387,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="wifiIpLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>90</y>
+        <x>1</x>
+        <y>325</y>
         <width>240</width>
         <height>31</height>
        </rect>
@@ -4249,8 +4412,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="wifiMac">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>110</y>
+        <x>1</x>
+        <y>345</y>
         <width>241</width>
         <height>51</height>
        </rect>
@@ -4274,8 +4437,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="lanIpLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>170</y>
+        <x>1</x>
+        <y>405</y>
         <width>240</width>
         <height>31</height>
        </rect>
@@ -4299,8 +4462,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="lanMac">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>190</y>
+        <x>1</x>
+        <y>425</y>
         <width>240</width>
         <height>51</height>
        </rect>
@@ -4392,8 +4555,8 @@ QPushButton:default {
      <widget class="QLabel" name="wifiMacLabel">
       <property name="geometry">
        <rect>
-        <x>241</x>
-        <y>90</y>
+        <x>232</x>
+        <y>325</y>
         <width>240</width>
         <height>31</height>
        </rect>
@@ -4417,8 +4580,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="lanMacLabel">
       <property name="geometry">
        <rect>
-        <x>241</x>
-        <y>170</y>
+        <x>232</x>
+        <y>405</y>
         <width>240</width>
         <height>31</height>
        </rect>
@@ -4442,8 +4605,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="wifiIp">
       <property name="geometry">
        <rect>
-        <x>241</x>
-        <y>110</y>
+        <x>232</x>
+        <y>345</y>
         <width>241</width>
         <height>51</height>
        </rect>
@@ -4467,8 +4630,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="lanIp">
       <property name="geometry">
        <rect>
-        <x>241</x>
-        <y>190</y>
+        <x>232</x>
+        <y>425</y>
         <width>240</width>
         <height>51</height>
        </rect>
@@ -4492,8 +4655,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="wifiApLabel">
       <property name="geometry">
        <rect>
-        <x>241</x>
-        <y>0</y>
+        <x>232</x>
+        <y>235</y>
         <width>240</width>
         <height>31</height>
        </rect>
@@ -4517,8 +4680,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      <widget class="QLabel" name="wifiAp">
       <property name="geometry">
        <rect>
-        <x>241</x>
-        <y>22</y>
+        <x>232</x>
+        <y>257</y>
         <width>240</width>
         <height>51</height>
        </rect>
@@ -4539,6 +4702,19 @@ background-color: rgba(255, 255, 255, 0);</string>
        <string>WiFi</string>
       </property>
      </widget>
+     <widget class="Line" name="line_10">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>249</y>
+        <width>20</width>
+        <height>212</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
      <zorder>hostnameLabel</zorder>
      <zorder>wifiIpLabel</zorder>
      <zorder>wifiMac</zorder>
@@ -4552,6 +4728,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      <zorder>lanIp</zorder>
      <zorder>wifiApLabel</zorder>
      <zorder>wifiAp</zorder>
+     <zorder>line_10</zorder>
     </widget>
     <widget class="QWidget" name="OTAUpdatePage">
      <widget class="QListWidget" name="updateListWidget">
@@ -5389,6 +5566,19 @@ QToolButton:focus {
       </property>
       <property name="toolButtonStyle">
        <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>51</y>
+        <width>378</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </widget>
@@ -6953,6 +7143,19 @@ QDoubleSpinBox::down-button:pressed {
        <string>Y:</string>
       </property>
      </widget>
+     <widget class="Line" name="line_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>378</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="toolOffsetZpage">
      <widget class="QPushButton" name="toolOffsetZSetButton">
@@ -7140,7 +7343,7 @@ QDoubleSpinBox::down-button:pressed {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>30</y>
+        <y>10</y>
         <width>231</width>
         <height>31</height>
        </rect>
@@ -7230,6 +7433,19 @@ QPushButton:focus {
       </property>
       <property name="flat">
        <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="Line" name="line_13">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>40</y>
+        <width>378</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </widget>
@@ -8361,8 +8577,8 @@ QPushButton:default {
      <widget class="QLabel" name="printFromLabel">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>80</y>
+        <x>10</x>
+        <y>10</y>
         <width>231</width>
         <height>31</height>
        </rect>
@@ -8499,6 +8715,19 @@ QPushButton:default {
         <width>40</width>
         <height>40</height>
        </size>
+      </property>
+     </widget>
+     <widget class="Line" name="line_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>378</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </widget>
@@ -10171,7 +10400,7 @@ QTabBar:focus {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -10529,7 +10758,7 @@ QPushButton:focus {
        <widget class="QLabel" name="flowRateLabelControlPage_5">
         <property name="geometry">
          <rect>
-          <x>86</x>
+          <x>60</x>
           <y>427</y>
           <width>421</width>
           <height>31</height>
@@ -10551,12 +10780,40 @@ background-color: rgba(255, 255, 255, 0);</string>
          <string>Tune Bed Height during Print :</string>
         </property>
        </widget>
+       <widget class="Line" name="line_4">
+        <property name="geometry">
+         <rect>
+          <x>-10</x>
+          <y>721</y>
+          <width>480</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_7">
+        <property name="geometry">
+         <rect>
+          <x>21</x>
+          <y>370</y>
+          <width>440</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
        <zorder>feedRateSpinBox</zorder>
        <zorder>feedRateLabelControlPage</zorder>
        <zorder>setFeedRateButton</zorder>
        <zorder>moveZMBabyStep</zorder>
        <zorder>moveZPBabyStep</zorder>
        <zorder>flowRateLabelControlPage_5</zorder>
+       <zorder>line_4</zorder>
+       <zorder>line_7</zorder>
       </widget>
       <widget class="QWidget" name="temperatureTab">
        <attribute name="icon">
@@ -10571,7 +10828,7 @@ background-color: rgba(255, 255, 255, 0);</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>110</y>
+          <y>105</y>
           <width>208</width>
           <height>21</height>
          </rect>
@@ -10821,7 +11078,7 @@ QPushButton:focus {
         <property name="geometry">
          <rect>
           <x>229</x>
-          <y>165</y>
+          <y>160</y>
           <width>161</width>
           <height>131</height>
          </rect>
@@ -11012,7 +11269,7 @@ QSpinBox::down-button:pressed {
         <property name="geometry">
          <rect>
           <x>388</x>
-          <y>165</y>
+          <y>160</y>
           <width>71</width>
           <height>130</height>
          </rect>
@@ -11122,7 +11379,7 @@ QPushButton:focus {
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>148</y>
+          <y>143</y>
           <width>105</width>
           <height>169</height>
          </rect>
@@ -11194,11 +11451,11 @@ QPushButton:focus {
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="nozzle250PreheatButton">
+       <widget class="QPushButton" name="tool250PreheatButton">
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>252</y>
+          <y>247</y>
           <width>90</width>
           <height>62</height>
          </rect>
@@ -11263,11 +11520,11 @@ QPushButton:focus {
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="nozzle180PreheatButton">
+       <widget class="QPushButton" name="tool180PreheatButton">
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>150</y>
+          <y>145</y>
           <width>90</width>
           <height>55</height>
          </rect>
@@ -11333,11 +11590,11 @@ QPushButton:focus {
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="nozzle220PreheatButton">
+       <widget class="QPushButton" name="tool220PreheatButton">
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>200</y>
+          <y>195</y>
           <width>90</width>
           <height>55</height>
          </rect>
@@ -11587,7 +11844,7 @@ QPushButton:focus {
 }</string>
         </property>
         <property name="text">
-         <string>90°C</string>
+         <string>80°C</string>
         </property>
         <property name="iconSize">
          <size>
@@ -11851,6 +12108,113 @@ QPushButton:focus {
          <string>Chamber:</string>
         </property>
        </widget>
+       <widget class="QLabel" name="chamberLabel_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>600</y>
+          <width>80</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gotham Medium</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+   color:  white;
+background-color: rgba(255, 255, 255, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>templates/img/chamberHeatIcon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="bedLabel_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>400</y>
+          <width>80</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gotham Medium</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+   color:  white;
+background-color: rgba(255, 255, 255, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>templates/img/bed.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>320</y>
+          <width>455</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>510</y>
+          <width>455</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>721</y>
+          <width>480</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
        <zorder>toolLabel</zorder>
        <zorder>bedLabel_2</zorder>
        <zorder>cooldownButton</zorder>
@@ -11861,9 +12225,9 @@ QPushButton:focus {
        <zorder>bedTempSpinBox</zorder>
        <zorder>toolTempSpinBox</zorder>
        <zorder>toolToggleTemperatureButton</zorder>
-       <zorder>nozzle250PreheatButton</zorder>
-       <zorder>nozzle180PreheatButton</zorder>
-       <zorder>nozzle220PreheatButton</zorder>
+       <zorder>tool250PreheatButton</zorder>
+       <zorder>tool180PreheatButton</zorder>
+       <zorder>tool220PreheatButton</zorder>
        <zorder>bed60PreheatButton</zorder>
        <zorder>bed100PreheatButton</zorder>
        <zorder>chamber90PreheatButton</zorder>
@@ -11871,6 +12235,11 @@ QPushButton:focus {
        <zorder>setChamberTempButton</zorder>
        <zorder>chamber50PreheatButton</zorder>
        <zorder>bedLabel_4</zorder>
+       <zorder>chamberLabel_2</zorder>
+       <zorder>bedLabel_3</zorder>
+       <zorder>line</zorder>
+       <zorder>line_2</zorder>
+       <zorder>line_3</zorder>
       </widget>
       <widget class="QWidget" name="motionTab">
        <attribute name="icon">
@@ -13060,6 +13429,19 @@ QPushButton:focus {
          <bool>false</bool>
         </property>
        </widget>
+       <widget class="Line" name="line_5">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>721</y>
+          <width>480</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
        <zorder>moveByLabel</zorder>
        <zorder>step1Button</zorder>
        <zorder>step10Button</zorder>
@@ -13079,6 +13461,7 @@ QPushButton:focus {
        <zorder>extruderButton</zorder>
        <zorder>ELabel</zorder>
        <zorder>toolToggleMotionButton</zorder>
+       <zorder>line_5</zorder>
       </widget>
       <widget class="QWidget" name="filamentTab">
        <attribute name="icon">
@@ -13397,11 +13780,25 @@ QToolButton :focus {
          <enum>Qt::ToolButtonTextUnderIcon</enum>
         </property>
        </widget>
+       <widget class="Line" name="line_6">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>721</y>
+          <width>480</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
        <zorder>flowRateSpinBox</zorder>
        <zorder>setFlowRateButton</zorder>
        <zorder>flowRateLabelControlPage</zorder>
        <zorder>changeFilamentButton</zorder>
        <zorder>toggleFilamentSensorButton</zorder>
+       <zorder>line_6</zorder>
       </widget>
      </widget>
      <widget class="QPushButton" name="controlBackButton">
