@@ -358,6 +358,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.connect(self.QtSocket, QtCore.SIGNAL('Z_PROBING_FAILED'), self.showProbingFailed)
         self.connect(self.QtSocket, QtCore.SIGNAL('TOOL_OFFSET'), self.getToolOffset)
         self.connect(self.QtSocket, QtCore.SIGNAL('ACTIVE_EXTRUDER'), self.setActiveExtruder)
+        self.connect(self.QtSocket, QtCore.SIGNAL('DOOR_LOCK_MSG'), self.doorLockMsg)
 
         # Text Input events
         self.connect(self.wifiPasswordLineEdit, QtCore.SIGNAL("clicked()"),
@@ -691,6 +692,31 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
                     return
             else:
                 if dialog.WarningOk(self, "Door opened"):
+                    return
+
+    ''' +++++++++++++++++++++++++++ Volterra VAS +++++++++++++++++++++++++++++++++++++ '''
+
+    def doorLockMsg(self, data):
+        door_lock = False
+        door_sensor = False
+        door_lock_override = False
+
+        if 'door_lock' in data:
+            door_lock = data["door_lock"] == 1
+        if 'door_sensor' in data:
+            door_sensor = data["door_sensor"] == 1
+        if 'door_lock_override' in data:
+            door_lock_override = data["door_lock_override"] == 1
+
+        if door_lock and not door_sensor:
+            if self.printerStatusText == "Printing":
+                no_pause_pages = [self.controlPage, self.changeFilamentPage, self.changeFilamentProgressPage,
+                                  self.changeFilamentExtrudePage, self.changeFilamentRetractPage]
+                if door_lock_override or self.stackedWidget.currentWidget() in no_pause_pages:
+                    if dialog.WarningOk(self, "Door opened"):
+                        return
+                octopiclient.pausePrint()
+                if dialog.WarningOk(self, "Door opened. Print paused.", overlay=True):
                     return
 
     ''' +++++++++++++++++++++++++++ Firmware Update+++++++++++++++++++++++++++++++++++ '''
@@ -1497,7 +1523,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.changeFilamentButton.setDisabled(True)
             self.menuCalibrateButton.setDisabled(True)
             self.menuPrintButton.setDisabled(True)
-            self.doorUnlockButton.setDisabled(False)
+            self.doorLockButton.setDisabled(False)
 
         elif status == "Paused":
             self.playPauseButton.setChecked(False)
@@ -1506,7 +1532,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.changeFilamentButton.setDisabled(False)
             self.menuCalibrateButton.setDisabled(True)
             self.menuPrintButton.setDisabled(True)
-            self.doorUnlockButton.setDisabled(True)
+            self.doorLockButton.setDisabled(True)
 
         else:
             self.stopButton.setDisabled(True)
@@ -1515,7 +1541,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.changeFilamentButton.setDisabled(False)
             self.menuCalibrateButton.setDisabled(False)
             self.menuPrintButton.setDisabled(False)
-            self.doorUnlockButton.setDisabled(True)
+            self.doorLockButton.setDisabled(True)
 
     ''' ++++++++++++++++++++++++++++Active Extruder/Tool Change++++++++++++++++++++++++ '''
 
@@ -1913,6 +1939,7 @@ class QtWebsocket(QtCore.QThread):
     def __init__(self):
         super(QtWebsocket, self).__init__()
 
+        # ws://0.0.0.0:5000/sockjs/websocket
         url = "ws://{}/sockjs/{:0>3d}/{}/websocket".format(
             ip,  # host + port + prefix, but no protocol
             random.randrange(0, stop=999),  # server_id
@@ -1964,6 +1991,9 @@ class QtWebsocket(QtCore.QThread):
         if "plugin" in data:
             if data["plugin"]["plugin"] == 'Julia2018FilamentSensor':
                 self.emit(QtCore.SIGNAL('FILAMENT_SENSOR_TRIGGERED'), data["plugin"]["data"])
+
+            if data["plugin"]["plugin"] == 'VolterraVAS':
+                self.emit(QtCore.SIGNAL('DOOR_LOCK_MSG'), data["plugin"]["data"])
 
             if data["plugin"]["plugin"] == 'JuliaFirmwareUpdater':
                 self.emit(QtCore.SIGNAL('FIRMWARE_UPDATER'), data["plugin"]["data"])

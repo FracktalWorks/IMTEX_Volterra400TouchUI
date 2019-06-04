@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\mainGUI_volterra400.ui'
+# Form implementation generated from reading ui file 'g:\FracktalWorks\Volterra400TouchUI\octoprint_Volterra400TouchUI\mainGUI_volterra400.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
