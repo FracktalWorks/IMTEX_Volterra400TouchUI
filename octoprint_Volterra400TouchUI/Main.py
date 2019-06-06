@@ -1654,6 +1654,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         octopiclient.setToolTemperature({"tool0": 0, "tool1": 0})
         # octopiclient.setToolTemperature({"tool0": 0})
         octopiclient.setBedTemperature(0)
+        self.chamber90PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S0'))
         self.toolTempSpinBox.setProperty("value", 0)
         self.bedTempSpinBox.setProperty("value", 0)
 
@@ -1845,7 +1846,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
                 'gcode/' + tool0Diameter + '_' + tool1Diameter + '_dual_extruder_calibration_Volterra.gcode',
                 True)
         elif gcode is 'movementTest':
-            self.printFromPath('gcode/movementTest', True)
+            self.printFromPath('gcode/movementTest.gcode', True)
         elif gcode is 'dualTest':
             self.printFromPath(
                 'gcode/' + tool0Diameter + '_' + tool1Diameter + '_Fracktal_logo_Volterra.gcode',
@@ -2122,7 +2123,6 @@ class ThreadFileUpload(QtCore.QThread):
         self.file = file
         self.prnt = prnt
 
-    def run(self):
 
         try:
             exists = os.path.exists(self.file.replace(".gcode", ".png"))
@@ -2130,7 +2130,6 @@ class ThreadFileUpload(QtCore.QThread):
             exists = False
         if exists:
             octopiclient.uploadImage(self.file.replace(".gcode", ".png"))
-
         if self.prnt:
             octopiclient.uploadGcode(file=self.file, select=True, prnt=True)
         else:

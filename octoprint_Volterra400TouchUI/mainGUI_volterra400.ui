@@ -1726,6 +1726,8 @@ background-color: rgba(255, 255, 255, 0);</string>
 
 border-top-left-radius: 10px;
 
+border-bottom-left-radius: 10px;
+
 
 
 }
@@ -1768,73 +1770,6 @@ QToolButton:default {
       </property>
       <property name="autoRaise">
        <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QToolButton" name="printPreviewButton">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>210</y>
-        <width>90</width>
-        <height>100</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Gotham Light</family>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QToolButton {
-	padding-top: 20px;
-     border: 1px solid rgb(87, 87, 87);
-	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));
-
-border-bottom-left-radius: 10px;
-
-
-
-}
-
-QToolButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
-}
-
-QToolButton:flat {
-    border: none; /* no border for a flat push button */
-}
-
-QToolButton:default {
-    border-color: navy; /* make the default button prominent */
-}</string>
-      </property>
-      <property name="text">
-       <string>Print View</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>templates/img/camera.png</normaloff>
-        <normalon>templates/img/3d-cube.png</normalon>templates/img/camera.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="toolButtonStyle">
-       <enum>Qt::ToolButtonTextUnderIcon</enum>
       </property>
      </widget>
      <widget class="Line" name="line_8">
@@ -1906,7 +1841,6 @@ QToolButton:default {
      <zorder>tool0TargetTemperature_2</zorder>
      <zorder>tool0TargetTemperature_3</zorder>
      <zorder>doorLockButton</zorder>
-     <zorder>printPreviewButton</zorder>
      <zorder>line_8</zorder>
      <zorder>line_9</zorder>
     </widget>
