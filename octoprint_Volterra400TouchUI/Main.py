@@ -1393,7 +1393,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             self.chamberTempBar.setMaximum(temperature['chamberActual'])
         self.chamberTempBar.setValue(temperature['chamberActual'])
         self.chamberActualTemperatute.setText(str(int(temperature['chamberActual'])))  # + unichr(176))
-        self.chamberTargetTemperature.setText(str(int(temperature['chamberActual'])))  # + unichr(176))
+        self.chamberTargetTemperature.setText(str(int(temperature['chamberTarget'])))  # + unichr(176))
 
         if temperature['filboxActual'] > 40:
             self.filboxTempBar.setMaximum(80)
@@ -1401,7 +1401,10 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         else:
             self.filboxTempBar.setMaximum(80)
             self.filboxTempBar.setStyleSheet(styles.bar_heater_cold)
+        self.filboxTempBar.setValue(temperature['filboxActual'])
         self.filboxActualTemperatute.setText(str(int(temperature['filboxActual'])))  # + unichr(176))
+        self.filboxTargetTemperature.setText(str(80))  # + unichr(176))
+
 
 
 
@@ -1654,7 +1657,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         octopiclient.setToolTemperature({"tool0": 0, "tool1": 0})
         # octopiclient.setToolTemperature({"tool0": 0})
         octopiclient.setBedTemperature(0)
-        self.chamber90PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S0'))
+        octopiclient.gcode(command='M141 S0')
         self.toolTempSpinBox.setProperty("value", 0)
         self.bedTempSpinBox.setProperty("value", 0)
 
