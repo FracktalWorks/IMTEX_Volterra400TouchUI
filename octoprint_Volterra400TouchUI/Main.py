@@ -1617,6 +1617,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         else:
             self.toolTempSpinBox.setProperty("value", float(self.tool0TargetTemperature.text()))
         self.bedTempSpinBox.setProperty("value", float(self.bedTargetTemperature.text()))
+        self.chamberTempSpinBox.setProperty("value", float(self.chamberTargetTemperature.text()))
 
     def setStep(self, stepRate):
         '''

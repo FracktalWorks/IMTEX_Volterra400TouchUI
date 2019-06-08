@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -10344,7 +10344,7 @@ QTabBar:focus {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -11788,7 +11788,7 @@ QPushButton:focus {
 }</string>
         </property>
         <property name="text">
-         <string>80°C</string>
+         <string>90°C</string>
         </property>
         <property name="iconSize">
          <size>
