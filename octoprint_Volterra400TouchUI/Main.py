@@ -1394,14 +1394,14 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.chamberTargetTemperature.setText(str(int(temperature['chamberTarget'])))  # + unichr(176))
 
         if temperature['filboxActual'] > 40:
-            self.filboxTempBar.setMaximum(80)
+            self.filboxTempBar.setMaximum(50)
             self.filboxTempBar.setStyleSheet(styles.bar_heater_heating)
         else:
-            self.filboxTempBar.setMaximum(80)
+            self.filboxTempBar.setMaximum(50)
             self.filboxTempBar.setStyleSheet(styles.bar_heater_cold)
         self.filboxTempBar.setValue(temperature['filboxActual'])
         self.filboxActualTemperatute.setText(str(int(temperature['filboxActual'])))  # + unichr(176))
-        self.filboxTargetTemperature.setText(str(80))  # + unichr(176))
+        self.filboxTargetTemperature.setText(str(50))  # + unichr(176))
 
 
 
