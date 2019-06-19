@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -11780,7 +11780,7 @@ QPushButton:focus {
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="chamber90PreheatButton">
+       <widget class="QPushButton" name="chamber70PreheatButton">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -11828,7 +11828,7 @@ QPushButton:focus {
 }</string>
         </property>
         <property name="text">
-         <string>90°C</string>
+         <string>70°C</string>
         </property>
         <property name="iconSize">
          <size>
@@ -11998,7 +11998,7 @@ QPushButton:focus {
          </size>
         </property>
        </widget>
-       <widget class="QPushButton" name="chamber50PreheatButton">
+       <widget class="QPushButton" name="chamber40PreheatButton">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -12047,7 +12047,7 @@ QPushButton:focus {
 }</string>
         </property>
         <property name="text">
-         <string>50°C</string>
+         <string>40°C</string>
         </property>
         <property name="iconSize">
          <size>
@@ -12214,10 +12214,10 @@ background-color: rgba(255, 255, 255, 0);</string>
        <zorder>tool220PreheatButton</zorder>
        <zorder>bed60PreheatButton</zorder>
        <zorder>bed100PreheatButton</zorder>
-       <zorder>chamber90PreheatButton</zorder>
+       <zorder>chamber70PreheatButton</zorder>
        <zorder>chamberTempSpinBox</zorder>
        <zorder>setChamberTempButton</zorder>
-       <zorder>chamber50PreheatButton</zorder>
+       <zorder>chamber40PreheatButton</zorder>
        <zorder>bedLabel_4</zorder>
        <zorder>chamberLabel_2</zorder>
        <zorder>bedLabel_3</zorder>

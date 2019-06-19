@@ -873,6 +873,7 @@ class Ui_MainWindow(object):
         self.line_9.setFrameShadow(QtGui.QFrame.Sunken)
         self.line_9.setObjectName(_fromUtf8("line_9"))
         self.virtualPrinterMode = QtGui.QLabel(self.homePage)
+        self.virtualPrinterMode.setEnabled(False)
         self.virtualPrinterMode.setGeometry(QtCore.QRect(440, 4, 41, 61))
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -6672,14 +6673,14 @@ class Ui_MainWindow(object):
         self.bed100PreheatButton.setDefault(False)
         self.bed100PreheatButton.setFlat(False)
         self.bed100PreheatButton.setObjectName(_fromUtf8("bed100PreheatButton"))
-        self.chamber90PreheatButton = QtGui.QPushButton(self.temperatureTab)
-        self.chamber90PreheatButton.setGeometry(QtCore.QRect(130, 620, 90, 64))
-        self.chamber90PreheatButton.setMinimumSize(QtCore.QSize(0, 0))
+        self.chamber70PreheatButton = QtGui.QPushButton(self.temperatureTab)
+        self.chamber70PreheatButton.setGeometry(QtCore.QRect(130, 620, 90, 64))
+        self.chamber70PreheatButton.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(15)
-        self.chamber90PreheatButton.setFont(font)
-        self.chamber90PreheatButton.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.chamber70PreheatButton.setFont(font)
+        self.chamber70PreheatButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
@@ -6703,12 +6704,12 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.chamber90PreheatButton.setIconSize(QtCore.QSize(40, 40))
-        self.chamber90PreheatButton.setCheckable(False)
-        self.chamber90PreheatButton.setAutoDefault(False)
-        self.chamber90PreheatButton.setDefault(False)
-        self.chamber90PreheatButton.setFlat(False)
-        self.chamber90PreheatButton.setObjectName(_fromUtf8("chamber90PreheatButton"))
+        self.chamber70PreheatButton.setIconSize(QtCore.QSize(40, 40))
+        self.chamber70PreheatButton.setCheckable(False)
+        self.chamber70PreheatButton.setAutoDefault(False)
+        self.chamber70PreheatButton.setDefault(False)
+        self.chamber70PreheatButton.setFlat(False)
+        self.chamber70PreheatButton.setObjectName(_fromUtf8("chamber70PreheatButton"))
         self.chamberTempSpinBox = QtGui.QSpinBox(self.temperatureTab)
         self.chamberTempSpinBox.setGeometry(QtCore.QRect(231, 558, 161, 131))
         font = QtGui.QFont()
@@ -6811,14 +6812,14 @@ class Ui_MainWindow(object):
         self.setChamberTempButton.setIcon(icon16)
         self.setChamberTempButton.setIconSize(QtCore.QSize(50, 50))
         self.setChamberTempButton.setObjectName(_fromUtf8("setChamberTempButton"))
-        self.chamber50PreheatButton = QtGui.QPushButton(self.temperatureTab)
-        self.chamber50PreheatButton.setGeometry(QtCore.QRect(130, 559, 90, 62))
-        self.chamber50PreheatButton.setMinimumSize(QtCore.QSize(0, 0))
+        self.chamber40PreheatButton = QtGui.QPushButton(self.temperatureTab)
+        self.chamber40PreheatButton.setGeometry(QtCore.QRect(130, 559, 90, 62))
+        self.chamber40PreheatButton.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(15)
-        self.chamber50PreheatButton.setFont(font)
-        self.chamber50PreheatButton.setStyleSheet(_fromUtf8("QPushButton {\n"
+        self.chamber40PreheatButton.setFont(font)
+        self.chamber40PreheatButton.setStyleSheet(_fromUtf8("QPushButton {\n"
 "     border: 1px solid rgb(87, 87, 87);\n"
 "\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.188, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(255, 255, 255, 255));\n"
@@ -6843,12 +6844,12 @@ class Ui_MainWindow(object):
 "QPushButton:focus {\n"
 "    outline: none;\n"
 "}"))
-        self.chamber50PreheatButton.setIconSize(QtCore.QSize(40, 40))
-        self.chamber50PreheatButton.setCheckable(False)
-        self.chamber50PreheatButton.setAutoDefault(False)
-        self.chamber50PreheatButton.setDefault(False)
-        self.chamber50PreheatButton.setFlat(False)
-        self.chamber50PreheatButton.setObjectName(_fromUtf8("chamber50PreheatButton"))
+        self.chamber40PreheatButton.setIconSize(QtCore.QSize(40, 40))
+        self.chamber40PreheatButton.setCheckable(False)
+        self.chamber40PreheatButton.setAutoDefault(False)
+        self.chamber40PreheatButton.setDefault(False)
+        self.chamber40PreheatButton.setFlat(False)
+        self.chamber40PreheatButton.setObjectName(_fromUtf8("chamber40PreheatButton"))
         self.bedLabel_4 = QtGui.QLabel(self.temperatureTab)
         self.bedLabel_4.setGeometry(QtCore.QRect(9, 530, 124, 21))
         font = QtGui.QFont()
@@ -6923,10 +6924,10 @@ class Ui_MainWindow(object):
         self.tool220PreheatButton.raise_()
         self.bed60PreheatButton.raise_()
         self.bed100PreheatButton.raise_()
-        self.chamber90PreheatButton.raise_()
+        self.chamber70PreheatButton.raise_()
         self.chamberTempSpinBox.raise_()
         self.setChamberTempButton.raise_()
-        self.chamber50PreheatButton.raise_()
+        self.chamber40PreheatButton.raise_()
         self.bedLabel_4.raise_()
         self.chamberLabel_2.raise_()
         self.bedLabel_3.raise_()
@@ -8375,7 +8376,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.mainApplication)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.controlTabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -8553,9 +8554,9 @@ class Ui_MainWindow(object):
         self.tool220PreheatButton.setText(_translate("MainWindow", "220°C", None))
         self.bed60PreheatButton.setText(_translate("MainWindow", "60°C", None))
         self.bed100PreheatButton.setText(_translate("MainWindow", "100°C", None))
-        self.chamber90PreheatButton.setText(_translate("MainWindow", "90°C", None))
+        self.chamber70PreheatButton.setText(_translate("MainWindow", "70°C", None))
         self.chamberTempSpinBox.setSuffix(_translate("MainWindow", "°C", None))
-        self.chamber50PreheatButton.setText(_translate("MainWindow", "50°C", None))
+        self.chamber40PreheatButton.setText(_translate("MainWindow", "40°C", None))
         self.bedLabel_4.setText(_translate("MainWindow", "Chamber:", None))
         self.step1Button.setText(_translate("MainWindow", "1 mm", None))
         self.step10Button.setText(_translate("MainWindow", "10 mm", None))

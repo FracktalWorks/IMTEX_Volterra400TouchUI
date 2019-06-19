@@ -499,8 +499,8 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.bed60PreheatButton.pressed.connect(lambda: octopiclient.setBedTemperature(target=60))
         self.bed100PreheatButton.pressed.connect(lambda: octopiclient.setBedTemperature(target=100))
         self.setChamberTempButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S' + str(self.chamberTempSpinBox.value())))
-        self.chamber50PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S50'))
-        self.chamber90PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S90'))
+        self.chamber40PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S40'))
+        self.chamber70PreheatButton.pressed.connect(lambda: octopiclient.gcode(command='M141 S70'))
         self.setFlowRateButton.pressed.connect(lambda: octopiclient.flowrate(self.flowRateSpinBox.value()))
         self.setFeedRateButton.pressed.connect(lambda: octopiclient.feedrate(self.feedRateSpinBox.value()))
 
@@ -1382,7 +1382,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.bedTargetTemperature.setText(str(int(temperature['bedTarget'])))  # + unichr(176))
 
         if temperature['chamberTarget'] == 0:
-            self.chamberTempBar.setMaximum(90)
+            self.chamberTempBar.setMaximum(70)
             self.chamberTempBar.setStyleSheet(styles.bar_heater_cold)
         elif temperature['chamberActual'] <= temperature['chamberTarget']:
             self.chamberTempBar.setMaximum(temperature['chamberTarget'])
@@ -1993,7 +1993,7 @@ class QtWebsocket(QtCore.QThread):
                 self.emit(QtCore.SIGNAL('CONNECTED'))
         if "plugin" in data:
             if data["plugin"]["plugin"] == 'VolterraFilamentSensor':
-                print(data["plugin"]["data"])
+                # print(data["plugin"]["data"])
                 if "type" in data["plugin"]["data"] and data["plugin"]["data"]["type"] == "hmi_msg":
                     self.emit(QtCore.SIGNAL('FILAMENT_SENSOR_TRIGGERED'), data["plugin"]["data"])
 
