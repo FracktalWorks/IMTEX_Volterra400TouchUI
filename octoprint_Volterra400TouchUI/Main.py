@@ -268,7 +268,6 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(15)
 
-
         self.wifiPasswordLineEdit = ClickableLineEdit(self.wifiSettingsPage)
         self.wifiPasswordLineEdit.setGeometry(QtCore.QRect(0, 170, 480, 60))
         self.wifiPasswordLineEdit.setFont(font)
@@ -315,6 +314,9 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.setNewToolZOffsetFromCurrentZBool = False
         self.setActiveExtruder(0)
 
+        self.dialog_doorlock = None
+        self.dialog_filamentsensor = None
+
         for spinbox in self.findChildren(QtGui.QSpinBox):
             lineEdit = spinbox.lineEdit()
             lineEdit.setReadOnly(True)
@@ -325,7 +327,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
 
         # Thread to get the get the state of the Printer as well as the temperature
 
-    def proceed(self):
+    def proceed(self, virtual):
         '''
         Startes websocket, as well as initialises button actions and callbacks. THis is done in such a manner so that the callbacks that dnepend on websockets
         load only after the socket is available which in turn is dependent on the server being available which is checked in the sanity check thread
@@ -336,6 +338,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.movie.stop()
         self.stackedWidget.setCurrentWidget(MainWindow.homePage)
         self.isFilamentSensorInstalled()
+        self.virtualPrinterMode.setVisible(virtual)
 
     def setActions(self):
 
@@ -358,6 +361,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         self.connect(self.QtSocket, QtCore.SIGNAL('Z_PROBING_FAILED'), self.showProbingFailed)
         self.connect(self.QtSocket, QtCore.SIGNAL('TOOL_OFFSET'), self.getToolOffset)
         self.connect(self.QtSocket, QtCore.SIGNAL('ACTIVE_EXTRUDER'), self.setActiveExtruder)
+        self.connect(self.QtSocket, QtCore.SIGNAL('DOOR_LOCK_STATE'), self.doorLockHandler)
         self.connect(self.QtSocket, QtCore.SIGNAL('DOOR_LOCK_MSG'), self.doorLockMsg)
 
         # Text Input events
@@ -577,24 +581,6 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         # Filament sensor toggle
         self.toggleFilamentSensorButton.clicked.connect(self.toggleFilamentSensor)
 
-
-    ''' +++++++++++++++++++++++++Print Restore+++++++++++++++++++++++++++++++++++ '''
-
-    def doorLock(self):
-        '''
-        function that toggles locking and unlocking the front door
-        :return:
-        '''
-
-        if self.doorLockButton.isChecked():   #should unlock door, because the button as to unlock door when button was pressed
-            self.doorLockButton.setText('Lock Door') #shows option to Lock the door
-            self.octopiclient.doorLock(state=1) #Unlocks the door
-        else:
-            self.doorLockButton.setText('Unlock Door') #shows option to unlock the door now
-            self.octopiclient.doorLock(state=0) #locks the door
-
-
-
     ''' +++++++++++++++++++++++++Print Restore+++++++++++++++++++++++++++++++++++ '''
 
     def printRestoreMessageBox(self, file):
@@ -627,8 +613,8 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
         success = False
         try:
             headers = {'X-Api-Key': apiKey}
-            req = requests.get('http://{}/plugin/Julia2018FilamentSensor/status'.format(ip), headers=headers)
-            success = req.status_code == requests.codes.ok
+            req = requests.get('http://{}/plugin/VolterraFilamentSensor/status'.format(ip), headers=headers)
+            success = req.status_code == requests.codes.no_content
         except:
             pass
         self.toggleFilamentSensorButton.setEnabled(success)
@@ -637,7 +623,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
     def toggleFilamentSensor(self):
         headers = {'X-Api-Key': apiKey}
         # payload = {'sensor_enabled': self.toggleFilamentSensorButton.isChecked()}
-        requests.get('http://{}/plugin/Julia2018FilamentSensor/toggle'.format(ip), headers=headers)   # , data=payload)
+        requests.get('http://{}/plugin/VolterraFilamentSensor/toggle'.format(ip), headers=headers)   # , data=payload)
 
     def filamentSensorHandler(self, data):
         sensor_enabled = False
@@ -647,77 +633,89 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             sensor_enabled = data["sensor_enabled"] == 1
 
         icon = 'filamentSensorOn' if sensor_enabled else 'filamentSensorOff'
-        self.toggleFilamentSensorButton.setIcon(QtGui.QIcon(_fromUtf8("templates/img/" + icon)))
+        self.toggleFilamentSensorButton.setIcon(QtGui.QIcon(_fromUtf8("templates/img/" + icon + ".png")))
 
         if not sensor_enabled:
             return
 
         triggered_extruder0 = False
         triggered_extruder1 = False
-        triggered_door = False
-        pause_print = False
 
-        if 'filament' in data:
-            triggered_extruder0 = data["filament"] == 0
-        elif 'extruder0' in data:
+        if 'extruder0' in data:
             triggered_extruder0 = data["extruder0"] == 0
 
-        if 'filament2' in data:
-            triggered_extruder1 = data["filament2"] == 0
-        elif 'extruder0' in data:
+        if 'extruder1' in data:
             triggered_extruder1 = data["extruder1"] == 0
 
-        if 'door' in data:
-            triggered_door = data["door"] == 0
-        if 'pause_print' in data:
-            pause_print = data["pause_print"]
-
-        if triggered_extruder0:
-            if dialog.WarningOk(self, "Filament outage in Extruder 0"):
-                pass
-
-        if triggered_extruder1:
-            if dialog.WarningOk(self, "Filament outage in Extruder 1"):
-                pass
-
-        if triggered_door:
-            if self.printerStatusText == "Printing":
-                no_pause_pages = [self.controlPage, self.changeFilamentPage, self.changeFilamentProgressPage,
-                                  self.changeFilamentExtrudePage, self.changeFilamentRetractPage]
-                if not pause_print or self.stackedWidget.currentWidget() in no_pause_pages:
-                    if dialog.WarningOk(self, "Door opened"):
-                        return
-                octopiclient.pausePrint()
-                if dialog.WarningOk(self, "Door opened. Print paused.", overlay=True):
-                    return
+        if triggered_extruder0 or triggered_extruder1:
+            if triggered_extruder0 and triggered_extruder1:
+                msg = "Filament outage in both Extruders"
+            elif triggered_extruder0:
+                msg = "Filament outage in Extruder 0"
             else:
-                if dialog.WarningOk(self, "Door opened"):
-                    return
+                msg = "Filament outage in Extruder 1"
+
+            if self.dialog_filamentsensor:
+                self.dialog_filamentsensor.close()
+                self.dialog_filamentsensor = None
+
+            self.dialog_filamentsensor = dialog.dialog(self, msg, icon="exclamation-mark.png")
+            if self.dialog_filamentsensor.exec_() == QtGui.QMessageBox.Ok:
+                self.dialog_filamentsensor = None
+                pass
 
     ''' +++++++++++++++++++++++++++ Volterra VAS +++++++++++++++++++++++++++++++++++++ '''
 
+    def doorLock(self):
+        '''
+        function that toggles locking and unlocking the front door
+        :return:
+        '''
+        octopiclient.overrideDoorLock()
+
     def doorLockMsg(self, data):
+        if "msg" not in data:
+            return
+
+        msg = data["msg"]
+
+        if self.dialog_doorlock:
+            self.dialog_doorlock.close()
+            self.dialog_doorlock = None
+
+        if msg is not None:
+            self.dialog_doorlock = dialog.dialog(self, msg, icon="exclamation-mark.png")
+            if self.dialog_doorlock.exec_() == QtGui.QMessageBox.Ok:
+                self.dialog_doorlock = None
+                return
+
+    def doorLockHandler(self, data):
+        door_lock_disabled = False
         door_lock = False
-        door_sensor = False
-        door_lock_override = False
+        # door_sensor = False
+        # door_lock_override = False
 
         if 'door_lock' in data:
+            door_lock_disabled = data["door_lock"] == "disabled"
             door_lock = data["door_lock"] == 1
-        if 'door_sensor' in data:
-            door_sensor = data["door_sensor"] == 1
-        if 'door_lock_override' in data:
-            door_lock_override = data["door_lock_override"] == 1
+        # if 'door_sensor' in data:
+        #     door_sensor = data["door_sensor"] == 1
+        # if 'door_lock_override' in data:
+        #     door_lock_override = data["door_lock_override"] == 1
 
-        if door_lock and not door_sensor:
-            if self.printerStatusText == "Printing":
-                no_pause_pages = [self.controlPage, self.changeFilamentPage, self.changeFilamentProgressPage,
-                                  self.changeFilamentExtrudePage, self.changeFilamentRetractPage]
-                if door_lock_override or self.stackedWidget.currentWidget() in no_pause_pages:
-                    if dialog.WarningOk(self, "Door opened"):
-                        return
-                octopiclient.pausePrint()
-                if dialog.WarningOk(self, "Door opened. Print paused.", overlay=True):
-                    return
+        # if self.dialog_doorlock:
+        #     self.dialog_doorlock.close()
+        #     self.dialog_doorlock = None
+
+        self.doorLockButton.setVisible(not door_lock_disabled)
+        if not door_lock_disabled:
+            # self.doorLockButton.setChecked(not door_lock)
+            self.doorLockButton.setText('Lock Door' if not door_lock else 'Unlock Door')
+
+            icon = 'doorLock' if not door_lock else 'doorUnlock'
+            self.doorLockButton.setIcon(QtGui.QIcon(_fromUtf8("templates/img/" + icon + ".png")))
+        else:
+            return
 
     ''' +++++++++++++++++++++++++++ Firmware Update+++++++++++++++++++++++++++++++++++ '''
 
@@ -1894,7 +1892,7 @@ class MainUiClass(QtGui.QMainWindow, mainGUI_volterra400.Ui_MainWindow):
             os.system('sudo cp -f config/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf')
             os.system('sudo rm -rf /home/pi/.octoprint/users.yaml')
             os.system('sudo rm -rf /home/pi/.octoprint/printerProfiles/*')
-            os.system('sudo cp -f config/config_Julia2018ProDualABLTouchUI.yaml /home/pi/.octoprint/config.yaml')
+            os.system('sudo cp -f config/config_Volterra400Dual.yaml /home/pi/.octoprint/config.yaml')
             self.tellAndReboot("Settings restored. Rebooting...")
 
     def restorePrintDefaults(self):
@@ -1994,11 +1992,19 @@ class QtWebsocket(QtCore.QThread):
             if data["event"]["type"] == "Connected":
                 self.emit(QtCore.SIGNAL('CONNECTED'))
         if "plugin" in data:
-            if data["plugin"]["plugin"] == 'Julia2018FilamentSensor':
-                self.emit(QtCore.SIGNAL('FILAMENT_SENSOR_TRIGGERED'), data["plugin"]["data"])
+            if data["plugin"]["plugin"] == 'VolterraFilamentSensor':
+                print(data["plugin"]["data"])
+                if "type" in data["plugin"]["data"] and data["plugin"]["data"]["type"] == "hmi_msg":
+                    self.emit(QtCore.SIGNAL('FILAMENT_SENSOR_TRIGGERED'), data["plugin"]["data"])
 
             if data["plugin"]["plugin"] == 'VolterraVAS':
-                self.emit(QtCore.SIGNAL('DOOR_LOCK_MSG'), data["plugin"]["data"])
+                # print(json.dumps(data["plugin"]["data"]))
+                # print(data["plugin"]["data"]["type"])
+                if "type" in data["plugin"]["data"]:
+                    if data["plugin"]["data"]["type"] == "door_state":
+                        self.emit(QtCore.SIGNAL('DOOR_LOCK_STATE'), data["plugin"]["data"])
+                    elif data["plugin"]["data"]["type"] == "hmi_msg":
+                        self.emit(QtCore.SIGNAL('DOOR_LOCK_MSG'), data["plugin"]["data"])
 
             if data["plugin"]["plugin"] == 'JuliaFirmwareUpdater':
                 self.emit(QtCore.SIGNAL('FIRMWARE_UPDATER'), data["plugin"]["data"])
@@ -2054,7 +2060,7 @@ class QtWebsocket(QtCore.QThread):
                                     'tool1Target': temp(data, "tool1", "target"),
                                     'bedActual': temp(data, "bed", "actual"),
                                     'bedTarget': temp(data, "bed", "target"),
-                                    'chamberActual':temp(data, "chamber", "actual"),
+                                    'chamberActual': temp(data, "chamber", "actual"),
                                     'chamberTarget': temp(data, "chamber", "target"),
                                     'filboxActual': temp(data, "filbox", "actual"),
                                     'filboxTarget': temp(data, "filbox", "target")}
@@ -2085,6 +2091,7 @@ class ThreadSanityCheck(QtCore.QThread):
     def __init__(self):
         super(ThreadSanityCheck, self).__init__()
         self.MKSPort = None
+        self.virtual = False
 
     def run(self):
         global octopiclient
@@ -2106,19 +2113,23 @@ class ThreadSanityCheck(QtCore.QThread):
                 for line in result:
                     if 'cdc_acm' in line:
                         self.MKSPort = line[line.index('ttyACM'):line.index('ttyACM') + 7]
-                        print self.MKSPort
+                        print(self.MKSPort)
 
                 if not self.MKSPort:
                     octopiclient.connectPrinter(port="VIRTUAL", baudrate=115200)
+                    self.virtual = True
+                    print("Connecting to VIRTUAL")
                 else:
                     octopiclient.connectPrinter(port="/dev/" + self.MKSPort, baudrate=115200)
+                    self.virtual = False
+                    print("Connecting to " + str(self.MKSPort))
                 break
             except:
                 time.sleep(1)
                 uptime = uptime + 1
-                print "Not Connected!"
+                print("Not Connected!")
         if not shutdown_flag:
-            self.emit(QtCore.SIGNAL('LOADED'))
+            self.emit(QtCore.SIGNAL('LOADED'), self.virtual)
 
 
 class ThreadFileUpload(QtCore.QThread):
@@ -2126,7 +2137,6 @@ class ThreadFileUpload(QtCore.QThread):
         super(ThreadFileUpload, self).__init__()
         self.file = file
         self.prnt = prnt
-
 
         try:
             exists = os.path.exists(self.file.replace(".gcode", ".png"))

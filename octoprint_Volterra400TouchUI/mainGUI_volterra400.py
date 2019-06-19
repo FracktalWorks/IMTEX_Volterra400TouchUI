@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\mainGUI_volterra400.ui'
+# Form implementation generated from reading ui file 'g:\FracktalWorks\Volterra400TouchUI\octoprint_Volterra400TouchUI\mainGUI_volterra400.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -436,7 +436,7 @@ class Ui_MainWindow(object):
         self.timeLeft.setWordWrap(False)
         self.timeLeft.setObjectName(_fromUtf8("timeLeft"))
         self.printerStatus = QtGui.QLabel(self.homePage)
-        self.printerStatus.setGeometry(QtCore.QRect(64, 4, 417, 60))
+        self.printerStatus.setGeometry(QtCore.QRect(64, 4, 376, 61))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Gotham"))
         font.setPointSize(12)
@@ -857,7 +857,7 @@ class Ui_MainWindow(object):
         icon4.addPixmap(QtGui.QPixmap(_fromUtf8("templates/img/doorLock.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.doorLockButton.setIcon(icon4)
         self.doorLockButton.setIconSize(QtCore.QSize(50, 50))
-        self.doorLockButton.setCheckable(True)
+        self.doorLockButton.setCheckable(False)
         self.doorLockButton.setChecked(False)
         self.doorLockButton.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.doorLockButton.setAutoRaise(False)
@@ -872,6 +872,22 @@ class Ui_MainWindow(object):
         self.line_9.setFrameShape(QtGui.QFrame.HLine)
         self.line_9.setFrameShadow(QtGui.QFrame.Sunken)
         self.line_9.setObjectName(_fromUtf8("line_9"))
+        self.virtualPrinterMode = QtGui.QLabel(self.homePage)
+        self.virtualPrinterMode.setGeometry(QtCore.QRect(440, 4, 41, 61))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.virtualPrinterMode.setFont(font)
+        self.virtualPrinterMode.setStyleSheet(_fromUtf8("\n"
+"background-color: rgba(255, 255, 255, 0);\n"
+"color: rgb(255, 40, 10);\n"
+"font-size: 18pt;\n"
+"font-weight: bold;"))
+        self.virtualPrinterMode.setScaledContents(True)
+        self.virtualPrinterMode.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.virtualPrinterMode.setWordWrap(True)
+        self.virtualPrinterMode.setObjectName(_fromUtf8("virtualPrinterMode"))
         self.timeLeftLabel.raise_()
         self.printPreviewMain.raise_()
         self.statusBar.raise_()
@@ -917,6 +933,7 @@ class Ui_MainWindow(object):
         self.doorLockButton.raise_()
         self.line_8.raise_()
         self.line_9.raise_()
+        self.virtualPrinterMode.raise_()
         self.stackedWidget.addWidget(self.homePage)
         self.MenuPage = QtGui.QWidget()
         self.MenuPage.setObjectName(_fromUtf8("MenuPage"))
@@ -8359,7 +8376,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(1)
-        self.controlTabWidget.setCurrentIndex(3)
+        self.controlTabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -8395,6 +8412,7 @@ class Ui_MainWindow(object):
         self.tool0TargetTemperature_2.setText(_translate("MainWindow", "0", None))
         self.tool0TargetTemperature_3.setText(_translate("MainWindow", "1", None))
         self.doorLockButton.setText(_translate("MainWindow", "Unlock Door", None))
+        self.virtualPrinterMode.setText(_translate("MainWindow", "V", None))
         self.menuControlButton.setText(_translate("MainWindow", "Control", None))
         self.menuPrintButton.setText(_translate("MainWindow", "Print", None))
         self.menuSettingsButton.setText(_translate("MainWindow", "Settings", None))
@@ -8535,7 +8553,7 @@ class Ui_MainWindow(object):
         self.tool220PreheatButton.setText(_translate("MainWindow", "220°C", None))
         self.bed60PreheatButton.setText(_translate("MainWindow", "60°C", None))
         self.bed100PreheatButton.setText(_translate("MainWindow", "100°C", None))
-        self.chamber90PreheatButton.setText(_translate("MainWindow", "80°C", None))
+        self.chamber90PreheatButton.setText(_translate("MainWindow", "90°C", None))
         self.chamberTempSpinBox.setSuffix(_translate("MainWindow", "°C", None))
         self.chamber50PreheatButton.setText(_translate("MainWindow", "50°C", None))
         self.bedLabel_4.setText(_translate("MainWindow", "Chamber:", None))

@@ -173,7 +173,7 @@ QStatusBar::item {
 background-color: rgb(40, 40, 40);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="loadingPage">
      <widget class="QLabel" name="LoadingLabel">
@@ -901,8 +901,8 @@ background-color: rgba(255, 255, 255, 0);</string>
        <rect>
         <x>64</x>
         <y>4</y>
-        <width>417</width>
-        <height>60</height>
+        <width>376</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
@@ -1760,7 +1760,7 @@ QToolButton:default {
        </size>
       </property>
       <property name="checkable">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="checked">
        <bool>false</bool>
@@ -1796,6 +1796,45 @@ QToolButton:default {
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="virtualPrinterMode">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>4</y>
+        <width>41</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 40, 10);
+font-size: 18pt;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>V</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <zorder>timeLeftLabel</zorder>
@@ -1843,6 +1882,7 @@ QToolButton:default {
      <zorder>doorLockButton</zorder>
      <zorder>line_8</zorder>
      <zorder>line_9</zorder>
+     <zorder>virtualPrinterMode</zorder>
     </widget>
     <widget class="QWidget" name="MenuPage">
      <widget class="QPushButton" name="menuBackButton">
