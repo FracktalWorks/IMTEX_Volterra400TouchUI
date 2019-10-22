@@ -2107,12 +2107,12 @@ class ThreadSanityCheck(QtCore.QThread):
                     self.emit(QtCore.SIGNAL('STARTUP_ERROR'))
                     break
                 octopiclient = octoprintAPI(ip, apiKey)
-                result = subprocess.Popen("dmesg | grep 'ttyACM'", stdout=subprocess.PIPE, shell=True).communicate()[0]
+                result = subprocess.Popen("dmesg | grep 'ttyUSB'", stdout=subprocess.PIPE, shell=True).communicate()[0]
                 result = result.split('\n')  # each ssid and pass from an item in a list ([ssid pass,ssid paas])
                 result = [s.strip() for s in result]
                 for line in result:
                     if 'cdc_acm' in line:
-                        self.MKSPort = line[line.index('ttyACM'):line.index('ttyACM') + 7]
+                        self.MKSPort = line[line.index('ttyUSB'):line.index('ttyUSB') + 7]
                         print(self.MKSPort)
 
                 if not self.MKSPort:
